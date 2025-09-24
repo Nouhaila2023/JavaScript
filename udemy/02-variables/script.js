@@ -9,3 +9,9 @@ const pais = "España";
 
 console.log(nombre, edad, pais);
 alert("Hola " + nombre + " tienes " + edad + " años y eres de " + pais);
+
+
+
+
+
+
