@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let num1;
+        let num2;
+
+        do {
+            num1 = parseInt(prompt("Introduce el primer número (mayor que 0):"));
+        } while (isNaN(num1));
+        do {
+            num2 = parseInt(prompt("Introduce el segundo número (mayor que 0):"));
+        } while (isNaN(num2));
+
+        let suma = num1 + num2;
+        alert("La suma de " + num1 + " y " + num2 + " es: " + suma);
+        document.write("La suma de " + num1 + " y " + num2 + " es: " + suma);
+
+    </script>
+    
+</body>
+</html>

@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio10</title>
+    <title>Ejercicio18</title>
 </head>
 <body>
     <script>
 
-        let num = prompt("Dime un numero:");
-
-        for (let i = 1 ; i <11 ; i++){
-            document.write(i + " x " + num + " = " + (i*num)+ "<br>");
+        let numero = parseInt(prompt("Introduce un número:"));
+        
+        while(numero){
+            numero -= 1;
+            document.write(numero + "<br>");
         }
 
-        
+       
 
     </script>
 </body>
