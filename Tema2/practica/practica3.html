@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica3</title>
+    <style>
+        .red {
+            color: red;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        .blue {
+            color: blue;
+            background-color: lightgray;
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <p id="parafo1">Hola mundo</p>
+    <p id="parafo2">Hola</p>
+
+    <script>
+        document.getElementById("parafo1").className = "red";
+        document.getElementById("parafo2").className = "blue";
+        
+        function meterTexto(id) {
+            texto = prompt("Escribe algo:");
+            document.getElementById(id).innerHTML = texto;
+        }
+
+
+    </script>
+
+
+</body>
+</html>

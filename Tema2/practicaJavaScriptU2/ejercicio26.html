@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio26</title>
+</head>
+<body>
+
+    <script>
+         
+        let contador = 0;
+        let letra;
+
+        do{
+            letra = prompt("Dime un letra:");
+
+            if(letra.length != 1){
+                alert("Error, debes introducir una sola letra");
+            } else {
+                if(letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u" 
+                || letra == "A" || letra == "E" || letra == "I" || letra == "O" || letra == "U"){
+                    contador++;
+                }
+                
+            }
+            document.write(letra + "<br>");
+
+        }while (letra !== "*");
+
+        
+        document.write("------------------------------<br>");
+        document.write("Has introducido: " + contador + "vocales.")
+
+
+    </script>
+    
+</body>
+</html>

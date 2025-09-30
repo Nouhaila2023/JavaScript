@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio23</title>
+</head>
+<body>
+
+    <script>
+
+
+        /*Escribir un programa que vaya pidiendo números. Si escribimos el número  9999  se  acabará,  cuando  se  introduzca  dicho  9999  debe  mostrar 
+         por pantalla  el  total  de  números  que  hemos  introducido  sin  contar  el  susodicho 9999*/
+        let suma = 0;
+         do{
+            num = prompt("Dime un numero Y SI QUIERES SALIR PINTA 9999:");
+            
+            if(num != 9999){
+                suma+= parseInt(num);
+            
+            }
+
+        } while (num != 9999);
+        document.write(suma);
+
+    </script>
+    
+</body>
+</html>

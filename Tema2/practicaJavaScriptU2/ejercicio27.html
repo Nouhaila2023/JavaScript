@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio27</title>
+</head>
+
+<body>
+    <script>
+
+        let palabra = "";
+        let caracter;
+
+        do {
+            caracter = prompt("Dame un caracter:");
+            if (caracter !== "*" && caracter !== null) {
+                palabra += caracter;
+            }
+            document.write("Mi caracter: " + caracter + "<br>")
+        } while (caracter !== "*" && caracter !== null);
+
+        document.write("-------------------------<br>");
+
+
+        if (palabra.length > 0) {
+            document.write("Has introducido: " + palabra);
+        } else {
+            document.write("No has introducido ningún caracter.");
+        }
+
+    </script>
+</body>
+
+</html>

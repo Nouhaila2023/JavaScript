@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        function suma(a, b){
+            let resultado = a + b;
+            console.log("El resultado de la suma es: " + resultado);
+            document.write("El resultado de la suma es: " + resultado);
+            alert("El resultado de la suma es: " + resultado);
+            return resultado;
+        }
+
+        let num1;
+        let num2;   
+        do {
+            num1 = parseInt(prompt("Introduce el primer número (mayor que 0):"));
+        } while (isNaN(num1) || num1 <= 0);
+        do {
+            num2 = parseInt(prompt("Introduce el segundo número (mayor que 0):"));
+        } while (isNaN(num2) || num2 <= 0); 
+
+        
+
+    </script>
+    
+</body>
+</html>

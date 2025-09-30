@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio22</title>
+  </head>
+  <body>
+    <script>
+      do{
+
+         let num = prompt("Dime un numero:");
+
+           let zero = 0;
+           let uno = 1;
+           let siguiente;
+
+           document.write(zero + "," + uno + ",");
+           for(let i = 3; i <= num; i++){
+
+               siguiente = zero + uno;
+               document.write(siguiente + ",");
+               zero = uno;
+               uno = siguiente;
+           }
+      } while (confirm("¿Desea calcular otra secuencia?"));
+
+
+    </script>
+  </body>
+</html>

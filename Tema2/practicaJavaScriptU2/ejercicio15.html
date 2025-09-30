@@ -10,11 +10,17 @@
     <script>
         let num = prompt("Dime un numero:");
 
-        for(let i = 0; i <= num; i++){
-            
-            
-               
+        let zero = 0;
+        let uno = 1;
+        let siguiente;
 
+        document.write(zero + "," + uno + ",");
+        for(let i = 3; i <= num; i++){
+            
+            siguiente = zero + uno;
+            document.write(siguiente + ",");
+            zero = uno;
+            uno = siguiente;
         }
 
     </script>

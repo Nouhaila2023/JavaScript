@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*Escribir un programa que vaya pidiendo números. Si escribimos el número  9999  se  acabará,  cuando  se  introduzca  dicho  9999  debe  mostrar 
+             por pantalla  el  total  de  números  que  hemos  introducido  sin  contar  el  susodicho 9999 con while*/
+        function pedirNumeros() {
+            let contador = 0;
+            let numero;
+            while (true) {
+                numero = parseInt(prompt("Introduce un número (9999 para terminar):"));
+
+                if (numero === 9999) {
+                    break; 
+                }
+
+                contador++; 
+            }
+            alert("Has introducido " + contador + " números.");
+        }
+        
+    </script>
+
+
+</body>
+
+</html>

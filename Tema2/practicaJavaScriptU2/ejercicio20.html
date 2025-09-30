@@ -8,7 +8,22 @@
 <body>
     <script>
 
-        
+        let num = prompt("Dime un numero:");
+
+        do{
+            if(isNaN(num) || num <=0){
+                num = prompt("El valor introducido no es un numero positivo, dime otro numero:");
+            }else{
+                document.write("los dicisores  de " + num + " son: <br>");
+
+                for(let i = 1; i <= num; i++){
+                    if(num % i == 0){
+                        document.write(i + "<br>");
+                    }
+                }
+            }
+        } while(isNaN(num) || num <=0);
+
         
     </script>
     
