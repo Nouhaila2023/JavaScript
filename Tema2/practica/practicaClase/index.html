@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="01-ej.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        Formulario de recogida de datos    
+    </h1>
+
+    <form action="">
+        <label for="">Nombre</label>
+        <input type="text" name="Nombre" id="Nombre" >Nombre <br>
+        <label for="">Apellido</label>
+        <input type="text" name="Apellido" id="Apellido" >Apellido <br>
+        <label for="">Eleger Opcion</label> 
+        <select name="Aficiones" id="Aficiones"> <br>
+            <option value="Musica">Musica</option>
+            <option value="Informatica">Informatica</option>
+            <option value="Deporte">Deporte</option>
+            <option value="Cine">Cine</option>
+        </select> 
+        <input type="button" value="Saludar" id="saludar" onclick="saludar();"> <br>
+        <input type="color" name="color" id="color" onchange="cambiarColor();">Cambiar el fondo del parrafo 
+        <p id="miParrafo">
+            ara cambiar el color de fondo de un párrafo con JavaScript, selecciona el párrafo usando su ID y 
+            luego asigna un nuevo valor a su propiedad style.backgroundColor. Por ejemplo, si el párrafo tiene el
+            ID "miParrafo", puedes escribir document.getElementById("miParrafo").style.backgroundColor = "lightblue"; 
+            en tu código JavaScript. 
+
+        </p>
+    
+        <p id="miParrafo2"></p>
+         <script src="01-ej.js"></script>
+    </form>
+    
+</body>
+</html>
