@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nomeros par inpar</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            width: 40px;
+        }
+
+        .amarillo {
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Numeros Par Inpar</h1>
+    <script>
+
+        function par(num) {
+            let par = false;
+            if (num % 2 == 0) {
+                par = true;
+            }
+            return par;
+        }
+
+        let contador = 1;
+        function pintarTabla(filas, columnas) {
+            document.write("<table>");
+            for (let i = 1; i <= filas; i++) {
+                document.write("<tr>");
+                for (let j = 1; j <= columnas; j++) {
+                    if (par(contador)) {
+                        document.write("<td class='amarillo'>" + contador + "</td>");
+                    } else {
+                        document.write("<td>" + contador + "</td>");
+                    }
+                    contador++;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        pintarTabla(10, 5);
+    </script>
+
+</body>
+
+</html>
