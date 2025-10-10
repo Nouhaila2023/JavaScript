@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1:</title>
+    <title>Ejercicio1</title>
 </head>
 <body>
-    
 
+    <h2>Introduce 5 números</h2>
+    <form id="formNumeros">
+        <table border="1">
+            <tr>
+                <th>N°</th>
+                <th>Número</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="number" id="numero1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><input type="number" id="numero2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><input type="number" id="numero3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><input type="number" id="numero4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><input type="number" id="numero5"></td>
+            </tr>
+        </table>
+        <br>
+        <button type="button" onclick="mostrarResultado()">Mostrar números</button>
+    </form>
+
+    <h2>Resultados:</h2>
+    <div id="resultado"></div>
+    <script src="ejercicio1.js"></script>
     
 </body>
 </html>
