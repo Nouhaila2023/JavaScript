@@ -8,7 +8,22 @@
 <body>
 
     <script>
+        /*Se ingresa por teclado un número positivo de uno o dos dígitos (1..99) mostrar
+un mensaje indicando si el número tiene uno o dos dígitos (recordar convertir a entero
+con parseInt para preguntar posteriormente por una variable entera).Tener en cuenta
+qué condición debe cumplirse para tener dos dígitos, un número entero.*/
 
+        let num = parseInt(prompt("Intrega ub numero:)"));
+
+        if(num >= 1 && num <= 99){
+            if (num <= 9){
+                document.write("El numero es de un digito.");
+            }else{
+                document.write("El numero es de dos digitos.");
+            }
+        }else{
+            document.write("El numero ingresasdo esta fuera del rango (1-99)");
+        }
         
 
 
