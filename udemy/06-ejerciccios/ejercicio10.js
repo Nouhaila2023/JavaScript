@@ -13,3 +13,10 @@ responde a estas dos preguntas devolviendo el resultado en la consola del naviga
 let yo = 2;
 let pepe = 3;
 let manolo = 6;
+
+let total = yo + pepe + manolo;
+let esCierto = yp < pepe;
+
+document.write(total);
+document.write(esCierto);
+
