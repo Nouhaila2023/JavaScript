@@ -1,0 +1,156 @@
+/*| Ejemplo | Propiedad clave          | Qué hace                                                      |
+| ------- | ------------------------ | ------------------------------------------------------------- |
+| 1       | `display: flex`          | Activa Flexbox, los hijos se colocan en fila.                 |
+| 2       | `flex-direction: column` | Cambia el eje principal de horizontal a vertical.             |
+| 3       | `row-reverse`            | Invierte el orden de los elementos en la fila.                |
+| 4       | `justify-content`        | Alinea los elementos en el eje **horizontal**.                |
+| 5       | `align-items`            | Alinea los elementos en el eje **vertical**.                  |
+| 6       | `flex-wrap`              | Permite que los elementos pasen a una nueva línea.            |
+| 7       | `align-content`          | Controla cómo se distribuyen **las filas** cuando hay varias. |
+| 8       | `gap`                    | Añade espacio entre los elementos, sin usar márgenes.         |
+*/
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio Flexbox</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #ffcc66;
+      margin-top: 40px;
+    }
+
+    .contenedor {
+      border: 2px solid #555;
+      padding: 10px;
+      height: 150px;
+      margin-bottom: 30px;
+      background-color: #333;
+    }
+
+    .caja {
+      width: 80px;
+      height: 80px;
+      color: #000;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    .roja { background-color: #ff4d4d; }
+    .verde { background-color: #4dff88; }
+    .azul { background-color: #4d94ff; }
+    .amarilla { background-color: #ffff66; color: #333; }
+    .naranja { background-color: #ffa64d; }
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplos de Flexbox 🎨</h1>
+
+  <!-- 1️⃣ display:flex -->
+  <h2>1. display: flex</h2>
+  <div class="contenedor" style="display: flex;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <!-- 2️⃣ flex-direction -->
+  <h2>2. flex-direction: column</h2>
+  <div class="contenedor" style="display: flex; flex-direction: column;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <h2>3. flex-direction: row-reverse</h2>
+  <div class="contenedor" style="display: flex; flex-direction: row-reverse;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <!-- 3️⃣ justify-content -->
+  <h2>4. justify-content (alineación horizontal)</h2>
+  <div class="contenedor" style="display: flex; justify-content: space-between;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <div class="contenedor" style="display: flex; justify-content: center;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <div class="contenedor" style="display: flex; justify-content: flex-end;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <!-- 4️⃣ align-items -->
+  <h2>5. align-items (alineación vertical)</h2>
+  <div class="contenedor" style="display: flex; align-items: flex-start;">
+    <div class="caja roja">1</div>
+    <div class="caja verde" style="height:100px;">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <div class="contenedor" style="display: flex; align-items: center;">
+    <div class="caja roja">1</div>
+    <div class="caja verde" style="height:100px;">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <div class="contenedor" style="display: flex; align-items: flex-end;">
+    <div class="caja roja">1</div>
+    <div class="caja verde" style="height:100px;">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+  <!-- 5️⃣ flex-wrap -->
+  <h2>6. flex-wrap: wrap</h2>
+  <div class="contenedor" style="display: flex; flex-wrap: wrap;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+    <div class="caja amarilla">4</div>
+    <div class="caja naranja">5</div>
+    <div class="caja roja">6</div>
+  </div>
+
+  <!-- 6️⃣ align-content -->
+  <h2>7. align-content (múltiples filas)</h2>
+  <div class="contenedor" style="display: flex; flex-wrap: wrap; align-content: space-between; height: 200px;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+    <div class="caja amarilla">4</div>
+    <div class="caja naranja">5</div>
+    <div class="caja roja">6</div>
+  </div>
+
+  <!-- 7️⃣ gap -->
+  <h2>8. gap (espacio entre elementos)</h2>
+  <div class="contenedor" style="display: flex; gap: 20px;">
+    <div class="caja roja">1</div>
+    <div class="caja verde">2</div>
+    <div class="caja azul">3</div>
+  </div>
+
+</body>
+</html>

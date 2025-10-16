@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo align-items</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .contenedor {
+      display: flex;
+      height: 150px;
+      border: 2px solid #333;
+      margin-bottom: 30px;
+      background-color: #f0f0f0;
+    }
+
+    .item {
+      width: 50px;
+      height: 50px;
+      background-color: coral;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Diferentes alineaciones */
+    .flex-start {
+      align-items: flex-start;
+    }
+
+    .center {
+      align-items: center;
+    }
+
+    .flex-end {
+      align-items: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>align-items: flex-start;</h2>
+  <div class="contenedor flex-start">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>align-items: center;</h2>
+  <div class="contenedor center">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+  <h2>align-items: flex-end;</h2>
+  <div class="contenedor flex-end">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+</body>
+</html>

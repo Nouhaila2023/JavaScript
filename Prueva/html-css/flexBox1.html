@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplos de Flexbox</title>
+<style>
+  body {
+    background-color: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  h2 {
+    color: #ffd166;
+    border-bottom: 2px solid #ffd166;
+    padding-bottom: 5px;
+  }
+
+  /* Contenedor base para todos los ejemplos */
+  .contenedor {
+    background-color: #222;
+    border: 2px solid #444;
+    padding: 10px;
+    margin-bottom: 40px;
+    height: 150px;
+    display: flex; /* activa Flexbox */
+  }
+
+  /* Estilo general de los ítems */
+  .item {
+    color: #fff;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  /* Colores para distinguir */
+  .rojo { background-color: #e63946; }
+  .verde { background-color: #06d6a0; }
+  .azul { background-color: #118ab2; }
+  .amarillo { background-color: #ffd166; color: #000; }
+  .morado { background-color: #8338ec; }
+
+</style>
+</head>
+<body>
+
+<h1>🎨 Ejemplos de Flexbox con colores</h1>
+
+<!-- 1️⃣ Flexbox básico -->
+<h2>1. display: flex (alineación horizontal por defecto)</h2>
+<div class="contenedor" style="display:flex;">
+  <div class="item rojo">1</div>
+  <div class="item verde">2</div>
+  <div class="item azul">3</div>
+</div>
+
+<!-- 2️⃣ Justify Content -->
+<h2>2. justify-content (controla la posición horizontal)</h2>
+
+<p><b>justify-content: center;</b></p>
+<div class="contenedor" style="justify-content:center;">
+  <div class="item rojo">A</div>
+  <div class="item verde">B</div>
+  <div class="item azul">C</div>
+</div>
+
+<p><b>justify-content: space-between;</b></p>
+<div class="contenedor" style="justify-content:space-between;">
+  <div class="item rojo">A</div>
+  <div class="item verde">B</div>
+  <div class="item azul">C</div>
+</div>
+
+<p><b>justify-content: space-around;</b></p>
+<div class="contenedor" style="justify-content:space-around;">
+  <div class="item rojo">A</div>
+  <div class="item verde">B</div>
+  <div class="item azul">C</div>
+</div>
+
+<!-- 3️⃣ Align Items -->
+<h2>3. align-items (controla la alineación vertical)</h2>
+
+<p><b>align-items: center;</b></p>
+<div class="contenedor" style="align-items:center;">
+  <div class="item rojo" style="height:50px;">1</div>
+  <div class="item verde" style="height:100px;">2</div>
+  <div class="item azul" style="height:70px;">3</div>
+</div>
+
+<p><b>align-items: flex-end;</b></p>
+<div class="contenedor" style="align-items:flex-end;">
+  <div class="item rojo" style="height:50px;">1</div>
+  <div class="item verde" style="height:100px;">2</div>
+  <div class="item azul" style="height:70px;">3</div>
+</div>
+
+<!-- 4️⃣ Flex Direction -->
+<h2>4. flex-direction (cambia la dirección principal)</h2>
+
+<p><b>flex-direction: column;</b></p>
+<div class="contenedor" style="flex-direction:column; height:200px;">
+  <div class="item rojo">Uno</div>
+  <div class="item verde">Dos</div>
+  <div class="item azul">Tres</div>
+</div>
+
+<p><b>flex-direction: row-reverse;</b></p>
+<div class="contenedor" style="flex-direction:row-reverse;">
+  <div class="item rojo">1</div>
+  <div class="item verde">2</div>
+  <div class="item azul">3</div>
+</div>
+
+<!-- 5️⃣ Flex Wrap -->
+<h2>5. flex-wrap (permite que los elementos se acomoden en varias líneas)</h2>
+
+<p><b>flex-wrap: wrap;</b></p>
+<div class="contenedor" style="flex-wrap:wrap;">
+  <div class="item rojo">1</div>
+  <div class="item verde">2</div>
+  <div class="item azul">3</div>
+  <div class="item amarillo">4</div>
+  <div class="item morado">5</div>
+  <div class="item rojo">6</div>
+  <div class="item verde">7</div>
+</div>
+
+<!-- 6️⃣ align-content (cuando hay varias filas con wrap) -->
+<h2>6. align-content (alineación vertical de las filas)</h2>
+
+<p><b>align-content: center;</b></p>
+<div class="contenedor" style="flex-wrap:wrap; align-content:center; height:200px;">
+  <div class="item rojo">A</div>
+  <div class="item verde">B</div>
+  <div class="item azul">C</div>
+  <div class="item amarillo">D</div>
+  <div class="item morado">E</div>
+  <div class="item rojo">F</div>
+</div>
+
+<!-- 7️⃣ order y flex-grow -->
+<h2>7. order y flex-grow</h2>
+<div class="contenedor">
+  <div class="item rojo" style="order:3;">1 (order 3)</div>
+  <div class="item verde" style="order:1; flex-grow:2;">2 (order 1, grow 2)</div>
+  <div class="item azul" style="order:2;">3 (order 2)</div>
+</div>
+
+</body>
+</html>
+
+
+/*| Concepto              | Qué hace                                             | Ejemplo en el código |
+| --------------------- | ---------------------------------------------------- | -------------------- |
+| `display:flex`        | Activa el modo Flexbox.                              | Ejemplo 1            |
+| `justify-content`     | Alinea los elementos horizontalmente.                | Ejemplo 2            |
+| `align-items`         | Alinea los elementos verticalmente.                  | Ejemplo 3            |
+| `flex-direction`      | Cambia la dirección (horizontal o vertical).         | Ejemplo 4            |
+| `flex-wrap`           | Permite que los ítems se vayan a la siguiente línea. | Ejemplo 5            |
+| `align-content`       | Alinea varias filas (cuando hay wrap).               | Ejemplo 6            |
+| `order` / `flex-grow` | Cambia el orden o el tamaño relativo de un elemento. | Ejemplo 7            |
+*/
