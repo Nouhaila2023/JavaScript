@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taria1-1</title>
+</head>
+
+<body>
+
+    <h3 id="miTexto">Esto es un ejemplo de texto a ser modificado</h3>
+
+    <tr>
+
+        <th><button onclick="subrayado()">Subrayado</button></th>
+        <th><button onclick="fondo()">Fondo</button></th>
+        <th><button onclick="color()">Texo</button></th>
+        <th><button onclick="tamano()">Tamaño</button></th>
+    </tr>
+
+    <script>
+
+        function subrayado() {
+            const texto = document.getElementById('miTexto');
+            if (texto.style.textDecoration === 'underline') {
+                texto.style.textDecoration = 'none'; 
+            } else {
+                texto.style.textDecoration = 'underline'; 
+            }
+
+        }
+
+        function fondo() {
+            const texto = document.getElementById('miTexto');
+            const colores = ['red', 'blue', 'yellow', 'white'];
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            texto.style.backgroundColor = colorAleatorio;
+        }
+
+        function color() {
+            const texto = document.getElementById('miTexto');
+            const colores = ['red', 'blue', 'yellow', 'black'];
+            const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+            texto.style.color = colorAleatorio;
+        }
+
+        function tamano() {
+            const texto = document.getElementById('miTexto');
+            const tamaños = ['small', 'medium', 'large', 'x-large', 'xx-large'];
+            const tamañoAleatorio = tamaños[Math.floor(Math.random() * tamaños.length)];
+            texto.style.fontSize = tamañoAleatorio;
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

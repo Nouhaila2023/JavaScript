@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+
+    <script>
+
+            /*
+    Hacer una función en JavaScript que recibe un número del día de la semana (0
+Domingo, 6 Sábado) y devuelve el día en letra en formato completo (Domingo, Lunes,
+Martes, Miércoles, Jueves, Viernes, Sábado). Comprobar dicha función mediante la
+fecha actual con el día obtenido por getDay().*/
+
+
+    function obtenerDiaSemana(numero) {
+      const dias = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+      return dias[numero];
+    }
+
+
+    const hoy = new Date();
+    const diaNumero = hoy.getDay();
+    const diaTexto = obtenerDiaSemana(diaNumero);
+    document.write("Hoy es: " + diaTexto);
+
+
+
+
+
+
+
+
+    document.write("<br>")
+    document.write(hoy);
+    document.write("<br>")
+    document.write(diaNumero);
+
+
+
+    </script>
+    
+</body>
+</html>
