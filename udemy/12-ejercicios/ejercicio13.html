@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let distancia = 17;
+let salto = 3;
+
+//Premera manira
+let numSaltos = distancia * salto;
+
+document.write(`Número de saltos necesarios para cubrir ${distancia} metros: ${numSaltos}`);
+
+
+//Segunda manera
+
+let saltosNecesarios = 0;
+
+for (let i = 0; i < distancia; i++) {
+    saltosNecesarios++;
+    document.write(`<br>Número de saltos necesarios para cubrir ${i} metros: ${saltosNecesarios}`);
+}
+
+
+    </script>
+
+
+</body>
+</html>

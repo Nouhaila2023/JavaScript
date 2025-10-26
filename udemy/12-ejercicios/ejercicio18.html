@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // Ejemplo: Generar un número aleatorio entre min y max (como en un dado)
+        const min = 1;
+        const max = 17;
+        const numeroDado = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        let numeroUsuario; // ← declarada fuera del bucle
+
+        do {
+            numeroUsuario = parseInt(prompt("Adivina el número (entre 1 y 17):"));
+
+            if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 17) {
+            alert("Por favor, ingresa un número válido entre 1 y 17.");
+            } 
+            else if (numeroUsuario < numeroDado) {
+            alert("El número secreto es MÁS GRANDE.");
+            } 
+            else if (numeroUsuario > numeroDado) {
+            alert("El número secreto es MÁS PEQUEÑO.");
+            }
+
+        } while (numeroUsuario !== numeroDado);
+
+        document.write("🎉 ¡Felicidades! Has adivinado el número: " + numeroDado);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

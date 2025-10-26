@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <script>
+        /** Ejercicio 14
+     * 
+     * un DJ no sabe que genero musical poner en la fiesta 
+     * Preguntale al usuario que genero quiere (pop, rock, rap)
+     * Segun lo que prefiera devuelve un mensaje diferente
+     * Si no esta entre las opciones, dile que no tenemos ese genero
+     */
+
+
+        let genero = prompt("¿Qué género musical prefieres para la fiesta? (pop, rock, rap)").toLowerCase();
+
+        switch (genero) {
+            case "pop":
+                alert("¡Genial! Pondremos los mejores éxitos pop para animar la fiesta.");
+                break;
+            case "rock":
+                alert("¡Perfecto! Prepararemos una lista de rock clásico y moderno.");
+                break;
+            case "rap":
+                alert("¡Excelente elección! Tendremos los mejores temas de rap.");
+                break;
+            default:
+                alert("Lo siento, no tenemos ese género musical disponible.");
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

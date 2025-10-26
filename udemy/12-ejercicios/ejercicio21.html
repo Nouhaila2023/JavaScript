@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        let num1 = parseInt(prompt("Ingrese el primer número entero positivo:"));
+        let num2 = parseInt(prompt("Ingrese el segundo número entero positivo:"));
+
+        while(isNaN(num1) || num1 <= 0) {
+            num1 = parseInt(prompt("Entrada inválida. Por favor, ingrese el primer número entero positivo:"));
+        }
+
+        while(isNaN(num2) || num2 <= 0) {
+            num2 = parseInt(prompt("Entrada inválida. Por favor, ingrese el segundo número entero positivo:"));
+        }
+
+        let suma = num1 + num2;
+        document.write(`La suma de ${num1} y ${num2} es: ${suma}`);
+        let resta = num1 - num2;
+        document.write(`<br>La resta de ${num1} y ${num2} es: ${resta}`);
+        let multiplicacion = num1 * num2;
+        document.write(`<br>La multiplicación de ${num1} y ${num2} es: ${multiplicacion}`);
+        let division = num1 / num2;
+        document.write(`<br>La división de ${num1} y ${num2} es: ${division}`);
+        let resto = num1 % num2;
+        document.write(`<br>El resto de la división de ${num1} y ${num2} es: ${resto}`);
+
+
+        let resultado =`
+        Suma: ${num1+num2}
+        Resta: ${num1-num2}
+        Multiplicación: ${num1*num2}
+        División: ${num1/num2}
+        Resto: ${num1%num2}
+        `;
+
+        document.write(`<br><pre>${resultado}</pre>`);
+
+
+
+    </script>
+    
+</body>
+</html>

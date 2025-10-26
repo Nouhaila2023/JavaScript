@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        let suma = 0;
+        let numero = 0;
+        let contador = 0 ;
+
+
+
+        do {
+            numero = parseFloat(prompt("Ingresa un número (ingresa un número negativo para terminar):"));
+            if (numero >= 0) {
+                suma += numero;
+                contador++;
+                let promedio = suma / contador;
+                document.write(`Número ingresado: ${numero}, Suma acumulada: ${suma}, Promedio: ${promedio} <br>`);
+            }
+        } while (numero >= 0);
+
+
+
+
+    </script>
+
+</body>
+</html>

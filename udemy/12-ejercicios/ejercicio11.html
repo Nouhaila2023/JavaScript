@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+
+        /**
+ * Ejercicio 11: Crear una función que reciba un array de números y devuelva un nuevo array con los números ordenados de menor a mayor.
+ */
+
+
+let numeros = [5, 3, 8, 1, 2];
+function ordenarNumeros(array) {
+    return array.slice().sort((a, b) => a - b);
+}
+
+let numerosOrdenados = ordenarNumeros(numeros);
+console.log(numerosOrdenados); // [1, 2, 3, 5, 8]
+console.log(numeros); // [5, 3, 8, 1, 2] (array original sin modificar)
+
+
+
+/**
+ * Ejercicio-11: 
+ * Nuestros usuarios tienen perror
+ * y quieres saber que edad tienen sus mascotas.
+ * un año de humano equivale a siete de perro
+ * pregunta a los usuarios que edad tiene su perro y dile la edad canina
+ */
+
+function calcularEdadCanina(edadHumana) {
+    return edadHumana * 7;
+}
+
+let edadHumana = parseInt(prompt("¿Qué edad tiene tu perro en años humanos?"));
+let edadCanina = calcularEdadCanina(edadHumana);
+console.log(`Tu perro tiene ${edadCanina} años en edad canina.`);
+
+    </script>
+    
+</body>
+</html>
