@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let num = parseInt(prompt("Introduce un número de DNI (8 cifras) o -1 para salir:"));
+
+        let guardados = [];
+        let resultado = "";
+        let letra = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];  
+        let letraDni = "";
+
+        do{
+            if(num >= 10000000 && num <= 99999999){
+                guardados.push(num);
+                resultado = num % 23;
+                letraDni = letra[resultado];
+                document.write(num  + letraDni);
+
+
+            } else if(num != -1){
+                alert("Número no válido. Introduce un número o -1 para salir.");
+            }
+            num = parseInt(prompt("Introduce un número de DNI (8 cifras) o -1 para salir:"));
+
+
+
+        }while(num != -1);
+
+
+
+
+    </script>
+    
+</body>
+</html>
