@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="formulario">
+        introduce tu nombre; <input type="text" name="nombre" id="nombre"><br/>
+        introduce tus  Apellidos; <input type="text" name="apellidos" id="apellidos"><br/>
+        <input type="button" value ="abrir ventana" onclick="abrirVentana()">
+    </form>
+    <script>
+        var miventana;
+        function abrirVentana(){
+            miventana=window.open("","miventana","width=600 height=600");
+           // miventana.document.write("<title>Mi ventana</title><body><h1>bienvenid@ a mi web "+ document.formulario.nombre.value + "con apellidos "+ document.formulario.apellidos.value+"</h1>");
+            miventana.document.write("<title>Mi ventana</title><body><h1>bienvenid@ a mi web "+ document.getElementById("nombre").value + "con apellidos "+ document.getElementById("apellidos").value+"</h1>");//tambien se puede hacer con id, las dos formas son correctas
+        }
+    </script>
+</body>
+</html>

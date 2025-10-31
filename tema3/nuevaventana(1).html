@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="Nombre">Nombre</label><input type="text" id="nombre" /><br />
+      <input type="color" name="color" id="color" onchange="cambiaColor();" />
+      <input type="button" value="Abrir ventana" onclick="AbrirVentana();" />
+    </form>
+    <script>
+      let ventana = "";
+      function AbrirVentana() {
+        ventana = window.open("", "Mi Ventana", "width=500, height=500");
+        ventana.document.write(
+          `<h1>Bienvenido a mi Web ${
+            document.getElementById("nombre").value
+          }</h1>`
+        );
+        ventana.document.write(`
+          <input type="color" name="color" id="color1" onchange="document.bgColor=document.getElementById('color1').value">`);
+        ventana.document.bgColor = document.getElementById("color").value;
+      }
+      function cambiaColor() {
+        document.bgColor = document.getElementById("color").value;
+      }
+    </script>
+  </body>
+</html>

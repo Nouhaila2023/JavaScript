@@ -17,12 +17,11 @@
         let letraDni = "";
 
         do{
-            if(num >= 10000000 && num <= 99999999){
+            if(num >= 10000000 && num <= 99999999){ 
                 guardados.push(num);
                 resultado = num % 23;
                 letraDni = letra[resultado];
                 document.write(num  + letraDni);
-
 
             } else if(num != -1){
                 alert("Número no válido. Introduce un número o -1 para salir.");

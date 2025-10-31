@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" name="formulario">
+        <label for="">Introduce tu nombre</label><input type="text" name="nombre" id="nombre">
+        <label for="">Elige fondo de la nueva ventana</label><input type="color" name="color" id="color"
+            onchange='document.bgColor=document.getElementById("color").value;'>
+        <input type="button" value="Abrir ventana" onclick="abrirVentana()">
+    </form>
+    <script>
+        let ventana = "";
+        function abrirVentana() {
+            ventana = window.open("", "mi ventana", "width=500, height=600");
+            ventana.document.write("<h1>hola , Bienvenido a mi web  " +document.getElementById("nombre").value+"</h1>");
+            ventana.document.write("<form name='formulario2'><input type='color' name='color2' id='color2' onchange='document.bgColor=document.formulario2.color2.value'></form>");
+           
+
+        }
+         function cambiaColor() {
+         document.bgColor=document.getElementById("color").value;
+         ventana.document.bgColor=document.getElementById("color").value;
+            /*document.bgColor = document.formulario.color.value;//con el id a la propiedad name*/
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
