@@ -8,9 +8,25 @@
 <body>
     
     <script>
-        
 
+        function lengthString() {
+            let texto;
 
+            // El bucle se repite mientras el texto tenga menos de 3 caracteres
+            do {
+                texto = prompt("Introduce un texto (mínimo 3 caracteres):");
+
+                if (texto.length >= 3) {
+                    document.writeln("El texto: '" + texto + "' tiene " + texto.length + " caracteres.<br>");
+                } else {
+                    document.writeln("El texto: '" + texto + "' tiene menos de 3 caracteres.<br>");
+                }
+
+            } while (texto.length < 3);
+        }
+
+        // Llamamos a la función
+        lengthString();
 
     </script>
 

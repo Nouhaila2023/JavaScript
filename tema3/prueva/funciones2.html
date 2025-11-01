@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cad = "Nouhaila:EL Haloui:123456";
+        let tfo;
+        cad = cad.toUpperCase();
+        document.write(cad);
+        document.write("<br>");
+        splitTodosCampos = cad.split(":");
+        split1Campo = cad.split(":", 1);
+        document.write(splitTodosCampos);
+        document.write("<br>");
+        document.write(split1Campo);
+        document.write("<br>");
+        tfo = splitTodosCampos[2];
+        //Cambio en el telefono los números 3 por 9s
+        tfo = tfo.replace("2", "9");
+        document.write(tfo);
+        document.write("<br>");
+        //Muestro el quinto número del teléfono
+        document.write(tfo.charAt(4));
+        document.write("<br>");
+        document.write("Bienvenido al CEEDCV");
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let s = new Date();
+        document.write(s + "<br>");
+
+        let mes = s.getMonth() + 1;
+        let fecha = s.getDate() + "/" + mes + "/" + s.getFullYear();
+        document.write("Fecha: " + fecha + "<br>");
+
+        let hora = s.getHours() + ":" + s.getMinutes() + ":" + s.getSeconds();
+        document.write("Hora: " + hora + "<br>");
+
+        let d = new Date(2020, 11, 25, 10, 30, 0);
+        document.write("Fecha especifica: " + d + "<br>");
+
+        
+
+
+    </script>
+    
+</body>
+</html>
