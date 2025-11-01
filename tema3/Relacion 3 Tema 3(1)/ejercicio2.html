@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #cajas {
+        display: flex;
+        gap: 10px;
+      }
+
+      #red {
+        background-color: red;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #pink {
+        background-color: pink;
+      }
+      #purple {
+        background-color: purple;
+      }
+      #orange {
+        background-color: orange;
+      }
+      .forma {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        width: 150px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="cajas">
+      <div id="red" class="forma" onmouseover="cambiarBackgroundColor('red')">red</div>
+      <div id="blue" class="forma" onmouseover="cambiarBackgroundColor('blue')">blue</div>
+      <div id="pink" class="forma" onmouseover="cambiarBackgroundColor('pink')">pink</div>
+      <div id="purple" class="forma" onmouseover="cambiarBackgroundColor('purple')">purple</div>
+      <div id="orange" class="forma" onmouseover="cambiarBackgroundColor('orange')">orange</div>
+    </div>
+
+    <script>
+
+        function cambiarBackgroundColor(color){
+            document.body.style.backgroundColor = color;
+        }
+
+    </script>
+
+  </body>
+</html>

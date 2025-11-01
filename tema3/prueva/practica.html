@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #cajas {
+        display: flex;
+        gap: 10px;
+      }
+
+      #red {
+        background-color: red;
+      }
+      #blue {
+        background-color: blue;
+      }
+      #pink {
+        background-color: pink;
+      }
+      #purple {
+        background-color: purple;
+      }
+      #orange {
+        background-color: orange;
+      }
+      .forma {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        width: 150px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="cajas">
+      <div id="red" class="forma" onmouseover="cambiarBackgroundColor()">red</div>
+      <div id="blue" class="forma" onmouseover="cambiarBackgroundColor()">blue</div>
+      <div id="pink" class="forma" onmouseover="cambiarBackgroundColor()">pink</div>
+      <div id="purple" class="forma" onmouseover="cambiarBackgroundColor()">purple</div>
+      <div id="orange" class="forma" onmouseover="cambiarBackgroundColor()">orange</div>
+    </div>
+
+    <script>
+
+        function cambiarBackgroundColor(){
+
+            let colores = ["red", "blue", "pink", "purple", "orange"];
+            let cajas = document.getElementsByClassName("forma");
+
+            for(let i = 0; i < cajas.length; i++){
+                let indiceAleatorio = Math.floor(Math.random() * colores.length);
+                cajas[i].style.backgroundColor = colores[indiceAleatorio];
+            }
+
+
+        }
+
+    </script>
+
+  </body>
+</html>
+
+</body>
+</html>

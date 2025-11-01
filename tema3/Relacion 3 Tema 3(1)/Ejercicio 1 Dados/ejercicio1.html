@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+        <img src="imagenes/dado01.png" alt="" id="dado">
+        <button type="button" onclick="lanzarDado()">Lanzar dado</button>
+        <audio src="sonidos/dado.mp3" id="audio"></audio>
+    </div>
+
+    <script>
+
+        let dado = document.getElementById("dado");
+        let audio = document.getElementById("audio");
+
+        function lanzarDado(){
+            let numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+            dado.src = "imagenes/dado0" + numeroAleatorio + ".png";
+            audio.play();
+        }
+
+        
+        /*
+        if(numeroAleatorio == 1){
+            dado.src = "imagenes/dado01.png";
+        } else if (numeroAleatorio == 2){
+            dado.src = "imagenes/dado02.png";
+        } else if (numeroAleatorio == 3){
+            dado.src = "imagenes/dado03.png";
+        } else if (numeroAleatorio == 4){
+            dado.src = "imagenes/dado04.png";
+        } else if (numeroAleatorio == 5){
+            dado.src = "imagenes/dado05.png";
+        } else {
+            dado.src = "imagenes/dado06.png";
+        }
+        */
+
+
+
+
+    </script>
+
+</body>
+</html>

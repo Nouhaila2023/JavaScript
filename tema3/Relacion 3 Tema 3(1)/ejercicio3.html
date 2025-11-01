@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="mostratBanner()">
+
+    <img src="./Ejercicio 1 Dados/imagenes/dado01.png" id="inmagen">
+
+    <script>
+
+        function mostratBanner(){
+
+            let imagen = document.getElementById("inmagen");
+            
+            let numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+            imagen.src = "Ejercicio 1 Dados/imagenes/dado0" + numeroAleatorio + ".png";
+
+             setTimeout("mostratBanner()", 1000);
+        }
+    </script>
+
+    
+</body>
+</html>
