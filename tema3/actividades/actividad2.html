@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="mostrarFecha()">
+
+    <script>
+        //Realiza un programa que pasados 20 segundos, nos muestre una sola vez la fecha actual del sistema. :)
+
+        function mostrarFecha() {
+            let fechaActual = new Date();
+            document.write("Fecha y hora actual: " + fechaActual.toString() + "<br>");
+        }
+
+        // Usar setTimeout -> para ejecutar la función después de 20 segundos (20000 milisegundos) :)
+        setTimeout(mostrarFecha, 20000);
+
+
+    </script>
+    
+</body>
+</html>

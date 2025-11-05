@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+    <script>
+
+        /*Realiza un programa que calcule cuántos números son a la vez primos y palíndromos desde el 1
+   hasta 100000. Debe guardar todos ellos en un array y al finalizar el proceso imprimir dicho array.*/
+
+        let numerosPrimos = [];
+
+        for (let i = 2; i <= 100000; i++) {
+            let esPrimo = true;
+
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    esPrimo = false;
+                    break;
+                }
+            }
+
+            if (esPrimo) {
+                numerosPrimos.push(i);
+            }
+        }
+
+        document.write("Números primos entre 1 y 100000:<br>" + numerosPrimos);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        const letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        let letraDni = prompt("Introduce tu número de DNI (3 cifras):").toUpperCase();
+        let dni = [];
+
+        
+
+        for (let i = 1; i <= 999; i++) {
+            let letraCalculada = letras[i % 23];
+            if (letraCalculada === letraDni) {
+                dni.push(i);   
+            }
+        }
+
+        if (dni.length > 0) {
+            document.write("Los números de DNI correspondientes a la letra " + letraDni + " son: "  + dni.join(", "));
+        } else {
+            document.write("No hay números de DNI correspondientes a la letra " + letraDni + ".");
+        }
+
+
+    </script>
+    
+</body>
+</html>

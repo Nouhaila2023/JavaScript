@@ -11,15 +11,17 @@
 
     <script>
 
+        let contador = 1;
         function mostratBanner(){
 
             let imagen = document.getElementById("inmagen");
-            
-            let numeroAleatorio = Math.floor(Math.random() * 6) + 1;
-            imagen.src = "Ejercicio 1 Dados/imagenes/dado0" + numeroAleatorio + ".png";
-
-             setTimeout("mostratBanner()", 1000);
-        }
+            imagen.src = "Ejercicio 1 Dados/imagenes/dado0" + contador + ".png";
+            contador++;
+            setTimeout("mostratBanner()", 1000);
+            if(contador > 6){
+                contador = 1;
+            }
+       }
     </script>
 
     

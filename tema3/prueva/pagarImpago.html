@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+        #contenedor {
+            background-color: rgb(238, 255, 0);
+            width: 200px;
+            height: 200px;
+        }
+
+    
+
+</style>
+<body>
+
+    <div>
+        <input type="checkbox" id="checkbox" onchange="" checked="checked">Contenedor visible
+
+        <div id="contenedor">
+           
+        </div>
+
+        <button id="pagar" onclick="pagar" onchange="pagar()">Pagar</button>
+    </div>
+
+
+    <script>
+        
+        function pagar(){
+            let contenedor = document.getElementById("contenedor");
+            contenedor.style.visibility = "hidden";
+            contenedor.style.display = "none";
+        }
+        function encender(){
+            let contenedor = document.getElementById("contenedor");
+            contenedor.style.visibility = "visible";
+            contenedor.style.display = "block";
+        }
+
+        
+
+    </script>
+
+    
+</body>
+</html>

@@ -9,30 +9,33 @@
 
     <script>
 
-        let num = parseInt(prompt("Introduce un número de DNI (8 cifras) o -1 para salir:"));
+        let guardados = []; // Array para guardar los DNIs
+        const letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
 
-        let guardados = [];
-        let resultado = "";
-        let letra = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];  
-        let letraDni = "";
+        // Función que pide el DNI
+        function pedirDNI() {
+            let entrada = prompt("Introduce un número de DNI (8 cifras) o -1 para salir:");
 
-        do{
-            if(num >= 10000000 && num <= 99999999){ 
-                guardados.push(num);
-                resultado = num % 23;
-                letraDni = letra[resultado];
-                document.write(num  + letraDni);
-
-            } else if(num != -1){
-                alert("Número no válido. Introduce un número o -1 para salir.");
+            if (entrada === "-1") {
+                clearInterval(intervalo); // Detiene el setInterval
+                mostrarResultados();
+                return;
             }
-            num = parseInt(prompt("Introduce un número de DNI (8 cifras) o -1 para salir:"));
 
+            let num = parseInt(entrada);
 
+            if (num >= 10000000 && num <= 99999999) {
+                guardados.push(num);
+            } else {
+                alert("Número no válido. Introduce un número de 8 cifras o -1 para salir.");
+            }
+        }
 
-        }while(num != -1);
+        // Inicia el setInterval para pedir DNI cada 20 segundos
+        let intervalo = setInterval(pedirDNI, 20000);
 
-
+        // Llamada inicial inmediata
+        pedirDNI();
 
 
     </script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+  <form>
+    <fieldset>
+      <legend>Formulario</legend>
+
+      <div class="mb-3">
+        <label for="nombreInput" class="form-label">Nombre:</label>
+        <input type="text" id="nombreInput" class="form-control" placeholder="Escribe tu nombre">
+      </div>
+
+      <div class="mb-3">
+        <label for="edadInput" class="form-label">Edad:</label>
+        <input type="number" id="edadInput" class="form-control" placeholder="Introduce tu edad">
+      </div>
+
+      <div class="mb-3">
+        <label for="aficionSelect" class="form-label">Aficiones:</label>
+        <select id="aficionSelect" class="form-select">
+          <option value="" disabled selected hidden>Selecciona una afición</option>
+          <option>Informática</option>
+          <option>Deportes</option>
+          <option>Música</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn btn-primary" onclick="AbrirVentana()">Enviar</button>
+    </fieldset>
+  </form>
+
+  <script>
+        function AbrirVentana() {
+        let ventana = window.open("", "", "width=500,height=300");
+        ventana.document.write(`
+            <h1>Alerta de JavaScript</h1>
+            <h2>¡Muchas gracias por enviar el formulario!</h2>
+            <button onclick="window.close()">Aceptar</button>
+        `);
+        }
+  </script>
+
+</body>
+
+</html>
