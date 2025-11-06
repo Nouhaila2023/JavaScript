@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*Determina cuál es el valor máximo y cuál es el mínimo en el array.*/
+
+        let array = [1,2,3,4,5];
+
+        let maximo = array.reduce((a, b) => a > b ? a : b);
+        let minimo = array.reduce((a, b) => a < b ? a : b);
+
+        console.log("El valor máximo es:", maximo);
+        console.log("El valor mínimo es:", minimo);
+
+    </script>
+    
+</body>
+</html>
