@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+      }
+      .rojo {
+        background-color: red;
+      }
+      .verde {
+        background-color: green;
+      }
+      .blue {
+        background-color: blue;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        id="red"
+        onmouseover="cambiaColor(this);"
+        onmouseout="restauraColor();"
+      ></div>
+      <div
+        id="blue"
+        onmouseover="cambiaColor(this);"
+        onmouseout="restauraColor();"
+      ></div>
+      <div
+        id="green"
+        onmouseover="cambiaColor(this);"
+        onmouseout="restauraColor();"
+      ></div>
+      <div
+        id="yellow"
+        onmouseover="cambiaColor(this);"
+        onmouseout="restauraColor();"
+      ></div>
+      <div></div>
+    </div>
+    <p id="orange" onclick="cambiaColor(this);">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis molestias
+      vitae, praesentium consectetur maiores magnam atque, quidem excepturi
+      aspernatur nisi dolor ducimus facere harum sequi sapiente vel culpa, ex
+      neque?
+    </p>
+    <script>
+      document.getElementById("red").className = "rojo";
+      document.getElementById("green").className = "verde";
+      document.getElementById("blue").className = "blue";
+      document.getElementById("yellow").className = "yellow";
+      function cambiaColor(elemento) {
+        document.bgColor = elemento.id;
+      }
+      function restauraColor() {
+        document.bgColor = "white";
+      }
+    </script>
+  </body>
+</html>

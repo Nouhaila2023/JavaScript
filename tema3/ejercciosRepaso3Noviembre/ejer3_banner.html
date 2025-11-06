@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=d, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="banner()">
+    <div>
+      <img src="imagenes/dado01.png" alt="" id="dado" />
+    </div>
+    <script>
+      contador = 1;
+      function banner() {
+        dado = document.getElementById("dado");
+        dado.src = "imagenes/dado0" + contador + ".png";
+        contador++;
+        if (contador > 6) {
+          contador = 1;
+        }
+        setTimeout("banner()", 1000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Documento sin título</title>
+
+    <style type="text/css">
+      #contenedor {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input
+      type="checkbox"
+      id="checkboxencender"
+      onchange="apagarEncender()"
+      checked="checked"
+    />
+    Contenedor visible<br />
+
+    <div id="contenedor"></div>
+    <input id="boton" type="button" value="Apagar" onclick="apagarEncender()" />
+
+    <script type="text/javascript">
+      function apagar() {
+        let contenedor = document.getElementById("contenedor");
+        contenedor.style.visibility = "hidden";
+        contenedor.style.display = "none";
+      }
+
+      function encender() {
+        let contenedor = document.getElementById("contenedor");
+        contenedor.style.visibility = "visible";
+        contenedor.style.display = "block";
+      }
+
+      function apagarEncender() {
+        let contenedor = document.getElementById("contenedor");
+        let boton = document.getElementById("boton");
+        let checkboxencender = document.getElementById("checkboxencender");
+        if (
+          contenedor.style.display == "block" ||
+          contenedor.style.display == ""
+        ) {
+          apagar();
+          boton.value = "Encender";
+          checkboxencender.checked = "";
+        } else {
+          encender();
+          boton.value = "Apagar";
+          checkboxencender.checked = "checked";
+        }
+      }
+    </script>
+  </body>
+</html>
