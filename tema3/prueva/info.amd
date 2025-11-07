@@ -1,0 +1,96 @@
+En HTML, el atributo `type` en un elemento `<input>` define **qué tipo de control** se mostrará (texto, número, fecha, botón, etc.).
+Aquí tienes **todos los tipos válidos de `<input>`** (según HTML5):
+
+---
+
+### 🔤 Tipos de texto y entrada general
+
+| Tipo       | Descripción                                                  |
+| ---------- | ------------------------------------------------------------ |
+| `text`     | Campo de texto de una sola línea.                            |
+| `password` | Campo de texto que oculta los caracteres (para contraseñas). |
+| `email`    | Campo para direcciones de correo (valida formato).           |
+| `search`   | Campo para búsquedas (puede mostrar ícono de búsqueda).      |
+| `tel`      | Campo para números de teléfono.                              |
+| `url`      | Campo para URLs (valida formato).                            |
+
+---
+
+### 🔢 Tipos numéricos y de rango
+
+| Tipo     | Descripción                                                     |
+| -------- | --------------------------------------------------------------- |
+| `number` | Campo numérico con controles para aumentar/disminuir.           |
+| `range`  | Control deslizante (slider) para seleccionar un valor numérico. |
+
+---
+
+### 📅 Tipos de fecha y hora
+
+| Tipo             | Descripción                            |
+| ---------------- | -------------------------------------- |
+| `date`           | Selector de fecha (año, mes, día).     |
+| `datetime-local` | Fecha y hora local (sin zona horaria). |
+| `month`          | Selector de mes y año.                 |
+| `week`           | Selector de semana y año.              |
+| `time`           | Selector de hora (hh:mm).              |
+
+---
+
+### ✅ Tipos de selección y opción
+
+| Tipo       | Descripción                                             |
+| ---------- | ------------------------------------------------------- |
+| `checkbox` | Casilla de verificación (puede marcarse o desmarcarse). |
+| `radio`    | Botón de opción (selección única en un grupo).          |
+| `color`    | Selector de color (abre un panel de color).             |
+
+---
+
+### 📁 Tipos de archivo
+
+| Tipo   | Descripción                          |
+| ------ | ------------------------------------ |
+| `file` | Permite subir uno o varios archivos. |
+
+---
+
+### 🧭 Tipos de botón
+
+| Tipo     | Descripción                                              |
+| -------- | -------------------------------------------------------- |
+| `button` | Botón genérico (acción definida por JavaScript).         |
+| `submit` | Envía el formulario.                                     |
+| `reset`  | Restablece el formulario a sus valores iniciales.        |
+| `image`  | Botón con imagen, actúa como `submit` (usa `src="..."`). |
+
+---
+
+### 🔒 Tipos especiales (ocultos o técnicos)
+
+| Tipo     | Descripción                                   |
+| -------- | --------------------------------------------- |
+| `hidden` | Campo no visible (para enviar datos ocultos). |
+
+---
+
+### 💡 Ejemplo práctico
+
+```html
+<form>
+  <input type="text" placeholder="Texto">
+  <input type="password" placeholder="Contraseña">
+  <input type="email" placeholder="Correo">
+  <input type="number" min="0" max="100">
+  <input type="date">
+  <input type="color">
+  <input type="checkbox"> Acepto
+  <input type="radio" name="opcion"> Opción 1
+  <input type="file">
+  <input type="submit" value="Enviar">
+</form>
+```
+
+---
+
+¿Quieres que te haga una **tabla visual con ejemplos interactivos** (como una mini demo HTML con todos los tipos)? Puedo generarte el código completo listo para copiar.
