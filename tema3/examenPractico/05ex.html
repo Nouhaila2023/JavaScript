@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ordenar un array de numero </h1>
+    <p id="arrayordenado"></p>
+
+    <script>
+        //let numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+        function generarPrimitiva(){
+            let array = [];
+
+            for(let i = 0; i < 6; i++){
+                let numeroAleatorio = Math.floor(Math.random() * 49) + 1;
+                array.push(numeroAleatorio);
+
+            }
+
+            document.getElementById("arrayordenado").innerHTML = 
+            "Números generados: " + array.join(", ") + "<br>";
+
+            function menorMayor(a,b) {
+                return a-b;
+            }
+
+            array.sort(menorMayor);
+
+            document.getElementById("arrayordenado").innerHTML += "Array ordenado de mayor a menor: " + array.join(", ");   
+
+        }
+
+        generarPrimitiva();
+
+
+    </script>
+    
+</body>
+</html>

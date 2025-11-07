@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Tiempo transcurrido desde que se cargó la página:</h2>
+    <p id="tiempo">0 segundos</p>
+
+    <script>
+        let segundos = 0;
+
+        // Esta función actualiza el contador cada segundo
+        function contarTiempo() {
+            segundos++;
+            document.getElementById("tiempo").textContent = segundos + " segundos";
+        }
+
+        // Llamamos a contarTiempo cada 1000 milisegundos (1 segundo)
+        setInterval(contarTiempo, 1000);
+    </script>
+    
+</body>
+</html>
