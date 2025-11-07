@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Notas de Alumnos</title>
+</head>
+<body>
+  <h2>Notas de los Alumnos</h2>
+  <div id="tabla"></div>
+
+  <script>
+    let alumnos = ['Alumno', 'Cliente', 'Servidor', 'Diseño', 'Despliegue'];
+    let notas = [
+      ['Juan', 5, 6, 7.3, 8],
+      ['María', 4, 5, 5.8, 9],
+      ['Pablo', 10, 9.8, 8, 7],
+      ['Sonia', 3.6, 5, 7, 6],
+      ['Carlos', 8, 3.7, 7.3, 9]
+    ];
+
+    notas.push(['Jaime', 4, 6.7, 5.8, 7]);
+
+    // Calcular medias
+    let medias = notas.map(a => {
+      let suma = a.slice(1).reduce((x, y) => x + y, 0);
+      return (suma / (a.length - 1)).toFixed(2);
+    });
+
+    // Mejor en Cliente
+    let mejorCliente = notas.reduce((max, a) => a[1] > max[1] ? a : max);
+
+    // Media en Servidor
+    let mediaServidor = (notas.reduce((suma, a) => suma + a[2], 0) / notas.length).toFixed(2);
+
+    // Peor alumno
+    let peor = notas[0];
+    let peorMedia = medias[0];
+    for (let i = 1; i < notas.length; i++) {
+      if (medias[i] < peorMedia) {
+        peor = notas[i];
+        peorMedia = medias[i];
+      }
+    }
+
+    // Mostrar resultados
+    let html = "<table border='1' cellpadding='5'><tr><th>Alumno</th><th>Cliente</th><th>Servidor</th><th>Diseño</th><th>Despliegue</th><th>Media</th></tr>";
+    for (let i = 0; i < notas.length; i++) {
+      html += "<tr>";
+      for (let j = 0; j < notas[i].length; j++) html += "<td>" + notas[i][j] + "</td>";
+      html += "<td>" + medias[i] + "</td></tr>";
+    }
+    html += "</table>";
+
+    html += `<p><b>Mejor nota en Cliente:</b> ${mejorCliente[0]} (${mejorCliente[1]})</p>`;
+    html += `<p><b>Nota media en Servidor:</b> ${mediaServidor}</p>`;
+    html += `<p><b>Alumno con peor media:</b> ${peor[0]} (${peorMedia})</p>`;
+
+    document.getElementById("tabla").innerHTML = html;
+  </script>
+</body>
+</html>

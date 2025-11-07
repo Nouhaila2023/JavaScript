@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reloj básico</title>
+</head>
+<body>
+  <h1 id="reloj"></h1>
+
+  <script>
+    
+    function mostrarHora() {
+      const hora = new Date().toLocaleTimeString(); // obtiene la hora local
+      document.getElementById("reloj").textContent = hora;
+    }
+
+    setInterval(mostrarHora, 1000); // actualiza cada segundo
+    mostrarHora(); // muestra la hora al inicio
+
+  </script>
+</body>
+</html>

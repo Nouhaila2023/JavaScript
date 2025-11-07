@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banner Publicitario</title>
+</head>
+<body>
+  <h2>Banner Publicitario</h2>
+  <div id="banner" style="border:1px solid black; padding:20px; width:400px; text-align:center;"></div>
+
+  <script>
+    let mensajes = [
+      "Ciclo de Grado Superior de Desarrollo de Aplicaciones Web",
+      "Ven a Cuevas del Almanzora y matricúlate",
+      "I.E.S Jaroso",
+      "Es tu oportunidad de encontrar un buen trabajo",
+      "Aprende programación con nosotros"
+    ];
+
+    let i = 0;
+    function mostrarBanner() {
+      document.getElementById("banner").textContent = mensajes[i];
+      i = (i + 1) % mensajes.length; // vuelve al primero al llegar al final
+    }
+
+    mostrarBanner();
+    setInterval(mostrarBanner, 3000); // cambia cada 3 segundos
+  </script>
+</body>
+</html>
+

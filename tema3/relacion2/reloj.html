@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reloj en JavaScript</title>
+  <style>
+    body {
+      background: #0f172a;
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .reloj {
+      font-size: 5rem;
+      background: #1e293b;
+      padding: 30px 60px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="reloj" id="reloj"></div>
+
+  <script>
+    function actualizarReloj() {
+      const ahora = new Date();
+      let horas = ahora.getHours();
+      let minutos = ahora.getMinutes();
+      let segundos = ahora.getSeconds();
+
+      // Formatear con ceros delante
+      horas = horas < 10 ? "0" + horas : horas;
+      minutos = minutos < 10 ? "0" + minutos : minutos;
+      segundos = segundos < 10 ? "0" + segundos : segundos;
+
+      document.getElementById("reloj").textContent = `${horas}:${minutos}:${segundos}`;
+    }
+
+    // Actualizar cada segundo
+    setInterval(actualizarReloj, 1000);
+
+    // Mostrar la hora al cargar la página
+    actualizarReloj();
+  </script>
+</body>
+</html>

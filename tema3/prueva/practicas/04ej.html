@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cuenta Bancaria</title>
+</head>
+<body>
+  <h2>Cuenta Bancaria</h2>
+
+  <script>
+    function CuentaBancaria(nombre, apellidos, direccion, cp, localidad, provincia, saldo) {
+      this.nombre = nombre;
+      this.apellidos = apellidos;
+      this.direccion = direccion;
+      this.cp = cp;
+      this.localidad = localidad;
+      this.provincia = provincia;
+      this.saldo = parseFloat(saldo);
+
+      this.mostrarInfo = function() {
+        document.write(`<p><b>Titular:</b> ${this.nombre} ${this.apellidos}</p>`);
+        document.write(`<p><b>Dirección:</b> ${this.direccion}, ${this.cp}, ${this.localidad}, ${this.provincia}</p>`);
+        document.write(`<p><b>Saldo:</b> ${this.saldo.toFixed(2)} €</p>`);
+      }
+
+      this.modificarSaldo = function(cantidad) {
+        this.saldo += parseFloat(cantidad);
+      }
+    }
+
+    // Pedir datos al usuario
+    let nombre = prompt("Nombre del titular:");
+    let apellidos = prompt("Apellidos:");
+    let direccion = prompt("Dirección:");
+    let cp = prompt("Código Postal:");
+    let localidad = prompt("Localidad:");
+    let provincia = prompt("Provincia:");
+    let saldo = prompt("Saldo inicial:");
+
+    let cuenta = new CuentaBancaria(nombre, apellidos, direccion, cp, localidad, provincia, saldo);
+    cuenta.mostrarInfo();
+
+    let cambio = prompt("¿Deseas modificar el saldo? (+ o - cantidad):");
+    cuenta.modificarSaldo(cambio);
+    document.write("<h3>Datos actualizados:</h3>");
+    cuenta.mostrarInfo();
+  </script>
+</body>
+</html>
