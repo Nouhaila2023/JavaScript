@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+     <script>
+
+        class producto_alimenticio {
+            constructor(codigo, nombre, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+
+            imprimedatos() {
+                document.write("<br>Codigo: " + this.codigo + "<br>" + "Nombre: " + this.nombre + "<br>" + "Precio: " + this.precio  + "€ <br>");
+            }
+        }
+
+
+        let productos = [];
+        productos.push(new producto_alimenticio("A01", "Arroz", 2.5));
+        productos.push(new producto_alimenticio("B15", "Leche", 1.8));
+        productos.push(new producto_alimenticio("C23", "Huevos", 3.7));
+
+
+        for (let i = 0; i < productos.length; i++) {
+            productos[i].imprimedatos();
+            
+        }
+
+    </script>
+    
+</body>
+</html>

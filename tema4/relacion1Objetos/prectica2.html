@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Cd_murcia{
+            constructor(titulo, grupo, fecha){
+                this.titulo = titulo;
+                this.grupo = grupo;
+                this.fecha = fecha;
+
+            }
+
+            mostrarInfo(){
+                document.write("<br> Titulo: " + this.titulo + "<br> Grupo: " + this.grupo + "<br> Fecha: " + this.fecha + "<br>");
+            }
+
+            
+        }
+
+        let cd = [];
+        cd.push(new Cd_murcia("Fuego", "gropo1", "12/08/2026"));
+        cd.push(new Cd_murcia("Lion", "gropo2", "13/10/2026"));
+        cd.push(new Cd_murcia("Fuerza", "gropo3", "12/08/2026"));
+
+        for(let i = 0; i < cd.length; i++){
+            cd[i].mostrarInfo();
+        }
+
+    </script>
+
+
+</body>
+</html>

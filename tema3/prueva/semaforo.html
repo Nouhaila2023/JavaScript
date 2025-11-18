@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Semáforo</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin-top: 40px;
+    }
+
+    .semaforo {
+      background-color: #333;
+      width: 100px;
+      height: 260px;
+      margin: 20px auto;
+      border-radius: 20px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      box-shadow: 0 0 15px #000;
+    }
+
+    .luz {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #111;
+      margin: auto;
+      transition: background-color 0.5s;
+      box-shadow: 0 0 10px #000;
+    }
+
+    #rojo.encendido { background-color: red; box-shadow: 0 0 20px red; }
+    #amarillo.encendido { background-color: yellow; box-shadow: 0 0 20px yellow; }
+    #verde.encendido { background-color: green; box-shadow: 0 0 20px green; }
+
+    .botones button {
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .botones button:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulador de Semáforo</h1>
+
+  <div class="semaforo">
+    <div id="rojo" class="luz"></div>
+    <div id="amarillo" class="luz"></div>
+    <div id="verde" class="luz"></div>
+  </div>
+
+  <div class="botones">
+    <button id="iniciar">Iniciar</button>
+    <button id="detener">Detener</button>
+  </div>
+
+  <script>
+    let colores = ["rojo", "amarillo", "verde"];
+    let tiempo = [3000, 1000, 3000]; // duración de cada color
+    let indice = 0;
+    let timeoutId = null;
+    let activo = false;
+
+    function encenderLuz(color) {
+      document.querySelectorAll(".luz").forEach(l => l.classList.remove("encendido"));
+      document.getElementById(color).classList.add("encendido");
+    }
+
+    function cicloSemaforo() {
+      if (!activo) return;
+
+      encenderLuz(colores[indice]);
+      timeoutId = setTimeout(() => {
+        indice = (indice + 1) % colores.length;
+        cicloSemaforo();
+      }, tiempo[indice]);
+    }
+
+    document.getElementById("iniciar").addEventListener("click", () => {
+      if (!activo) {
+        activo = true;
+        indice = 0;
+        cicloSemaforo();
+      }
+    });
+
+    document.getElementById("detener").addEventListener("click", () => {
+      activo = false;
+      clearTimeout(timeoutId);
+      document.querySelectorAll(".luz").forEach(l => l.classList.remove("encendido"));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        class Estudiante{
+            constructor(nombre, carrera){
+                this.nombre = nombre;
+                this.carrera = carrera;
+                this.calificaciones = [];
+            }
+
+
+            agregarCalificacion(calificacion){
+                this.calificaciones.push(calificacion);
+                document.write("Calificacion agregada");
+            }
+
+
+            calcularPromedio(){
+                let suma = this.calificaciones.reduce((a,b) => a+b, 0);
+                console.log(suma);
+                return suma / this.calificaciones.length;
+            }
+
+            mostrarInfo(){
+                return this.nombre + " - " + this.carrera;
+            }
+        }
+
+        let estudiante = new Estudiante("noha", "Informática");
+        estudiante.agregarCalificacion(8.5);
+        estudiante.agregarCalificacion(9.0);
+        console.log(estudiante.calcularPromedio());
+
+
+    </script>
+    
+</body>
+</html>

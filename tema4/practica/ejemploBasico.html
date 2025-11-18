@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    class Producto{
+        constructor(nombre, precio, cantidad){
+            this.nombre = nombre;
+            this.precio = precio;
+            this.cantidad = cantidad;
+        }
+
+        calcularSubtotal(){
+            return this.precio * this.cantidad;
+        }
+
+        mostrarInfo(){
+            return this.nombre + " - $" + this.precio;
+        }
+    }
+
+    let p1 = new Producto("Nouhaila", 800, 1);
+    let p2 = new Producto("Ana", 39, 2);
+
+    document.write(p1.nombre + "<br>");
+    document.write(p2.calcularSubtotal() + "<br>");
+
+    console.log(p1.nombre);
+    console.log(p2.calcularSubtotal());
+
+</script>
+
+</body>
+</html>

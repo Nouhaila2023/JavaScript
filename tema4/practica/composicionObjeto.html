@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        class Direccion{
+
+            constructor(calle, ciudad, codigoPostal){
+                this.calle = calle;
+                this.ciudad = ciudad;
+                this.codigoPostal = codigoPostal;
+            }
+        }
+
+        class Cliente{
+            constructor(nombre, email){
+                this.nombre = nombre;
+                this.email = email;
+                this.direccion = new Direccion("","","");
+            }
+
+
+           establecerDirección(calle, ciudad, codigo){
+                this.direccion = new Direccion(calle, ciudad, codigo);
+           }
+
+           mostrarInfo(){
+            return this.nombre + " - " + this.direccion.calle + " - " + this.direccion.ciudad;
+           }
+        }
+
+        let cliente = new Cliente("Juan", "juan@email.com");
+        cliente.establecerDirección("Calle Principal 123", "Madrid",
+        "28001");
+        console.log(cliente.mostrarInfo());
+
+
+
+
+    </script>
+
+
+</body>
+</html>
