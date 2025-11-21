@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let arrayPrimos = [1];
+
+        function esPrimo(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        let numero = 2;
+        while (arrayPrimos.length < 16) { 
+            if (esPrimo(numero)) {
+                arrayPrimos.unshift(numero);
+            }
+            numero++;
+        }
+
+        function invertirArray(arrayInvertir) {
+            let nuevoArray = [];
+            for (let i = arrayInvertir.length - 1; i >= 0; i--) {
+                nuevoArray.push(arrayInvertir[i] );
+            }
+            return nuevoArray;
+        }
+
+   
+        function visualizarArray(arrayVisualizar) {
+            for (let i = 0; i < arrayVisualizar.length; i++) {
+                document.write(arrayVisualizar[i], ", ");
+            }
+        }
+
+   
+
+        let nuevoArrayInvertido = invertirArray(arrayPrimos);
+
+
+        class Identidad{
+            constructor(){
+
+            }
+
+            GenerarLetra(dniSinLetra){
+                const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+                let numero = parseInt(dniSinLetra); 
+                let letra = letras[numero % 23];   
+                return dniSinLetra + letra;     
+
+            }
+
+
+            ComprobarDNI(dniConLetra){
+                let numero = parseInt(dniConLetra.slice(0, -1)); 
+                let letra = dniConLetra.slice(-1).toUpperCase(); 
+                const letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+                let letraCorrecta = letras[numero % 23];         
+                return letra === letraCorrecta;
+            }
+
+
+        }
+
+
+        class Diputado{
+
+            constructor(nombre, apellidos, dni, edad, partido){
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.dni = dni;
+                this.edad = edad;
+                this.partido = partido;
+            }
+
+            getNombre(){
+                return this.nombre;
+            }
+
+            setNombre(nuevoNombre){
+                this.nombre = nuevoNombre;
+            }
+
+            getApellidos(){
+                return this.apellidos;
+            }
+
+            setApellidos(nuevoApellido){
+                this.apellidos = nuevoApellido;
+            }
+
+            getDNI() { return this.dni; }
+
+            setDNI(nuevoDNI) {
+                const id = new Identidad();
+                if (id.ComprobarDNI(nuevoDNI)) {
+                    this.dni = nuevoDNI;
+                    return true;
+                }
+                return false;
+            }
+
+            getEdad(){
+                return this.edad;
+            }
+
+            setEdad(nuevaEdad) {
+                if (nuevaEdad > 0 && nuevaEdad < 200) {
+                    this.edad = nuevaEdad;
+                    return true;
+                }
+                return false;
+            }
+
+            toString(){
+                return  "Nombre: " +  this.nombre +
+                        ", Apellidos: " + this.apellidos +
+                        ", DNI: " + this.dni +
+                        ", Edad: " + this.edad +
+                        ", Partido: " + this.partido;
+            }
+
+        }
+
+        let arrayParlamento = [];
+
+
+        arrayParlamento.push(new Diputado("Herminio", "Cabezas", "12349T", 30, "Verde"));
+        arrayParlamento.push(new Diputado("Manolo", "López", "12349T", 20, "Azul"));
+        arrayParlamento.push(new Diputado("Jacobo", "Sánchez", "12349T", 53, "Amarillo"));
+
+
+        arrayParlamento.sort((a, b) => a.getEdad() - b.getEdad());
+
+        
+        for (let i = 0; i < arrayParlamento.length; i++) {
+            document.write(arrayParlamento[i].toString() + "<br>");
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

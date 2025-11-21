@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        var palabres = new Array('botella', 'zeta', 'androide', 'minuto');
+        palabres.sort();
+        document.write(palabres);
+
+
+        const colores = ['rojo', 'Azul', 'Verde', 'amarillo'];
+        colores.sort(function(a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+        });
+        console.log(colores); // ['Amarillo', 'Azul', 'rojo', 'Verde']
+
+
+        const frutas = ["Banana", "Naranja", "Manzana", "Mango"];
+
+        // Función de comparación para ordenar Z-A
+        frutas.sort(function(a, b) {
+        if (a > b) return -1; // 'a' debe ir antes que 'b' en orden descendente
+        if (a < b) return 1;  // 'b' debe ir antes que 'a'
+        return 0; // Son iguales
+        });
+
+        console.log(frutas);
+        // Resultado: ["Naranja", "Mango", "Manzana", "Banana"]
+
+
+    </script>
+
+
+</body>
+</html>

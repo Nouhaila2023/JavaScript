@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        
+    /*Crea un script donde declares un array vacío denominado nombres. Pide al usuario tres nombres
+usando la sentencia prompt de JavaScript y almacena esos nombres como elementos 0, 1 y 2
+del array. A continuación muestra el contenido del array por pantalla.*/
+
+        // Declarar array vacío
+    let nombres = [];
+
+    // Pedir 3 nombres al usuario
+    for(let i = 0; i < 3; i++){
+        let nombre = prompt("Ingresa un nombre:");
+        nombres.push(nombre);  // Agregar al array
+    }
+
+
+    document.write("Los nombres ingresados son: " + nombres.join(", "));
+
+    </script>
+
+
+</body>
+</html>

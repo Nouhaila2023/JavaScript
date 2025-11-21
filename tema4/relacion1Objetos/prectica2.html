@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <script>
 
-        class Cd_murcia{
-            constructor(titulo, grupo, fecha){
+        class CDMusica {
+            constructor(titulo, grupo, fecha) {
                 this.titulo = titulo;
                 this.grupo = grupo;
                 this.fecha = fecha;
-
             }
 
-            mostrarInfo(){
-                document.write("<br> Titulo: " + this.titulo + "<br> Grupo: " + this.grupo + "<br> Fecha: " + this.fecha + "<br>");
+            mostrarInfo() {
+                console.log(`Título: ${this.titulo}, Grupo: ${this.grupo}, Fecha: ${this.fecha}`);
             }
-
-            
         }
 
-        let cd = [];
-        cd.push(new Cd_murcia("Fuego", "gropo1", "12/08/2026"));
-        cd.push(new Cd_murcia("Lion", "gropo2", "13/10/2026"));
-        cd.push(new Cd_murcia("Fuerza", "gropo3", "12/08/2026"));
-
-        for(let i = 0; i < cd.length; i++){
-            cd[i].mostrarInfo();
+        // Crear tres objetos pidiendo datos al usuario
+        let cds = [];
+        for (let i = 1; i <= 3; i++) {
+            let titulo = prompt(`Introduce el título del CD ${i}:`);
+            let grupo = prompt(`Introduce el grupo del CD ${i}:`);
+            let fecha = prompt(`Introduce la fecha del CD ${i}:`);
+            let cd = new CDMusica(titulo, grupo, fecha);
+            cds.push(cd);
         }
+
+        // Mostrar la información de los CDs
+        for (let cd of cds) {
+            cd.mostrarInfo();
+        }
+
 
     </script>
 
 
 </body>
+
 </html>

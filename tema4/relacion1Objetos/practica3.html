@@ -9,26 +9,40 @@
 
     <script>
 
-        class Piso{
-            constructor(metros_cuadrados, altura, num_habitaciones, precio){
-                this.metros_cuadrados = metros_cuadrados;
+        class Piso {
+            constructor(metrosCuadrados, altura, numHabitaciones, precio) {
+                this.metrosCuadrados = metrosCuadrados;
                 this.altura = altura;
-                this.num_habitaciones = num_habitaciones;
+                this.numHabitaciones = numHabitaciones;
                 this.precio = precio;
             }
 
-            mostrarInfo(){}
+            mostrarInfo() {
+                console.log(`Metros cuadrados: ${this.metrosCuadrados}`);
+                console.log(`Altura: ${this.altura}`);
+                console.log(`Número de habitaciones: ${this.numHabitaciones}`);
+                console.log(`Precio: $${this.precio}`);
+            }
 
+            calcularIVA(porcentaje) {
+                let iva = this.precio * (porcentaje / 100);
+                console.log(`IVA (${porcentaje}%): $${iva}`);
+                console.log(`Precio con IVA: $${this.precio + iva}`);
+            }
+            }
 
-        }
+            // Pedir datos al usuario
+            let metros = parseFloat(prompt("Introduce los metros cuadrados:"));
+            let altura = parseFloat(prompt("Introduce la altura del piso:"));
+            let habitaciones = parseInt(prompt("Introduce el número de habitaciones:"));
+            let precio = parseFloat(prompt("Introduce el precio del piso:"));
+            let porcentajeIVA = parseFloat(prompt("Introduce el porcentaje de IVA:"));
 
-        pisos.push(
-            new Piso(70, 2, 2, 80000),
-            new Piso(95, 6, 3, 140000),
-            new Piso(120, 8, 4, 210000)
-        );
+            // Crear objeto y mostrar información
+            let miPiso = new Piso(metros, altura, habitaciones, precio);
+            miPiso.mostrarInfo();
+            miPiso.calcularIVA(porcentajeIVA);
 
-        
 
 
 
