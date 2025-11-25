@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Cuenta Bancaria</h2>
+
+<script>
+
+function cuentaBancaria(nombre, apellidos, direccion, cp, localidad, provincia, saldo){
+    this.nombre = nombre;
+    this.apellidos = apellidos;
+    this.direccion = direccion;
+    this.cp = cp;
+    this.localidad = localidad;
+    this.provincia = provincia;
+    this.saldo = saldo;
+
+    this.mostrar = function(){
+        document.write(
+            "Titular: " + this.nombre + " " + this.apellidos + "<br>" +
+            "Dirección: " + this.direccion + " (" + this.cp + ", " + this.localidad + ", " + this.provincia + ")<br>" +
+            "Saldo: " + this.saldo + "€<br>"
+        );
+    };
+
+    this.cambiarSaldo = function(cantidad){
+        this.saldo = cantidad;
+    };
+}
+
+let cliente = new cuentaBancaria(
+    prompt("Nombre:"),
+    prompt("Apellidos:"),
+    prompt("Dirección:"),
+    prompt("Código Postal:"),
+    prompt("Localidad:"),
+    prompt("Provincia:"),
+    prompt("Saldo:")
+);
+
+cliente.mostrar();
+
+</script>
+</body>
+</html>

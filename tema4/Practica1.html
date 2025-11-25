@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabla{
+        margin: auto;
+        width: 300px;
+        font-size: 25px;
+        border-collapse: collapse;
+        margin-bottom: 100px;
+        }
+
+        .tabla td{
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .tabla th{
+            border: 1px solid black;
+        }
+
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <script>
+
+        poblaciones =['Localidad', 'Enero', 'Febrero', 'Marzo', 'Abril']
+
+        temperaturas = [['Cuevas del Alamanzora',12,13,15,18],['Granada', 4.5, 8, 9, 15], ['Madrid', 4, 5.8, 8, 13], ['Soria', 0, 1,6,10]]
+        
+        temperaturas.push(['Malaga', 14, 16.7, 18.4, 20.3]);
+
+        let media;
+        let medias= [];
+        let alta=0;
+        let posicion=0;
+        let mediaAbril=0;
+        let peor;
+        let localidad;
+
+        document.write("<h1>Tabla de Temperaturas</h1>");
+        document.write("<table class='tabla'>");
+        for(let x=0; x<poblaciones.length; x++){
+            document.write("<th>" + poblaciones[x] + "</th>");
+        }
+        document.write("<th>Media</th>");
+        
+        for(let i=0; i<temperaturas.length; i++){
+            media = 0;
+            document.write("<tr>");
+            for(let j=0; j<temperaturas[i].length; j++){
+                document.write("<td>" + temperaturas[i][j] + "</td>");
+
+                if(j!=0){
+                    media = media + temperaturas[i][j];
+                }   
+
+                if(j==3){
+                    if(alta<temperaturas[i][j]){
+                        alta=temperaturas[i][j];
+                        posicion=i;
+                        
+                    }
+                }
+
+                if(j==4){
+                    mediaAbril=mediaAbril + temperaturas[i][j];
+                }
+            }
+
+            medias[i]=media/(temperaturas[i].length-1);
+            document.write("<td>" + medias[i] + "</td>");
+            document.write("</tr>");  
+            if(i==0){
+                peor=medias[i];
+                localidad=temperaturas[i][0];
+            }
+
+            if(peor>medias[i]){
+                peor=medias[i];
+                localidad=temperaturas[i][0];
+            }
+        }
+        mediaAbril=mediaAbril/(temperaturas.length);
+        document.write("</table>");
+
+        document.write("La temperatura más alta en Marzo ha sido: " + alta + " y corresponde a la población: " + temperaturas[posicion][0]);
+        document.write("<br>La media de temperatura en el mes de abril ha sido: " + mediaAbril);
+        document.write("<br>La poblacion con pero media de temperatura ha sido: " + localidad);
+    </script>
+</body>
+</html>

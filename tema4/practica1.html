@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let poblaciones = ['Localidad', 'Enero', 'Febrero', 'Marzo', 'Abril'];
+
+        let temperaturas = [
+            ['Cuevas del Alamanzora', 12, 13, 15, 18],
+            ['Granada', 4.5, 8, 9, 15],
+            ['Madrid', 4, 5.8, 8, 13],
+            ['Soria', 0, 1, 6, 10]
+        ];
+
+        //Añadir
+        temperaturas.push(['Málaga', 14, 16.7, 18.4, 20.3]);
+
+        let medias = [];
+        let temMaxMarzo = 0;
+        
+        //Media
+
+        for(let i = 0; i < temperaturas.length; i++){
+            let suma = 0;
+
+            for(let j = 1; j < 5; j++){
+                suma += temperaturas[i][j];
+            }
+
+            let media = suma / 4;
+
+            medias.push(media);
+
+            document.write(i + j)
+
+            document.write("Media de " + temperaturas[i][0] + ": " + media + "<br>");
+        }
+
+
+     
+
+
+
+
+    </script>
+
+</body>
+
+</html>

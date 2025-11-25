@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Banner dinámico</h2>
+
+    <p id="banner"></p>
+
+    <script>
+        
+        let textos = [
+            "Ciclo de Grado superior de Desarrollo de Aplicaciones Webs",
+            "Ven a Cuevas del Almanzora y matricúlat",
+            "I.E.S Jaroso",
+            "Es tu oportunidad de encontrar un buen trabajo"
+        ];
+
+        let i = 0;
+
+        function cambiar() {
+            document.getElementById("banner").innerHTML = textos[i];
+            i++;
+            if (i == textos.length) {
+                i = 0;
+            }
+        }
+
+        setInterval(cambiar, 2000);
+
+        cambiar();
+        
+    </script>
+
+</body>
+</html>

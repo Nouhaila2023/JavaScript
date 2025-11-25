@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 style="text-align:center;">Tabla de notas</h2>
+    <div id="resultado"></div>
+
+    <script>
+        let alumnos = ['Alumno', 'Cliente', 'Servidor', 'Diseño', 'Despliegue'];
+        let notas = [
+            ['Juan', 5, 6, 7.3, 8],
+            ['María', 4, 5, 5.8, 9],
+            ['Pablo', 10, 9.8, 8, 7],
+            ['Sonia', 3.6, 5, 7, 6],
+            ['Carlos', 8, 3.7, 7.3, 9]
+        ];
+
+        notas.push(['Jaime', 4, 6.7, 5.8, 7]);
+
+        // Calcular medias
+        let medias = [];
+        for (let i = 0; i < notas.length; i++) {
+            let suma = notas[i][1] + notas[i][2] + notas[i][3] + notas[i][4];
+            medias[i] = suma / 4;
+        }
+
+        // Mejor en Cliente
+        let mejorNota = 0;
+        let mejorAlumno = "";
+        for (let i = 0; i < notas.length; i++) {
+            if (notas[i][1] > mejorNota) {
+                mejorNota = notas[i][1];
+                mejorAlumno = notas[i][0];
+            }
+        }
+
+        // Media en Servidor
+        let sumaServidor = 0;
+        for (let i = 0; i < notas.length; i++) {
+            sumaServidor += notas[i][2];
+        }
+        let mediaServidor = sumaServidor / notas.length;
+
+        // Peor media
+        let peor = medias[0];
+        let peorAlumno = notas[0][0];
+        for (let i = 1; i < medias.length; i++) {
+            if (medias[i] < peor) {
+                peor = medias[i];
+                peorAlumno = notas[i][0];
+            }
+        }
+
+        // --- crear tabla ---
+        let tabla = "<table border='1' cellspacing='0' cellpadding='10' style='margin:auto; text-align:center;'>";
+
+        tabla += "<tr><th>Alumno</th><th>Cliente</th><th>Servidor</th><th>Diseño</th><th>Despliegue</th><th>Media</th></tr>";
+
+        for (let i = 0; i < notas.length; i++) {
+            tabla += "<tr>";
+            for (let j = 0; j < notas[i].length; j++) {
+                tabla += "<td>" + notas[i][j] + "</td>";
+            }
+            tabla += "<td>" + medias[i] + "</td>";
+            tabla += "</tr>";
+        }
+        
+        document.getElementById("resultado").innerHTML = tabla;
+
+        document.write("<p style='text-align:center;'>La nota más alta en Cliente ha sido: " + mejorNota + " y corresponde a " + mejorAlumno + "</p>");
+        document.write("<p style='text-align:center;'>La nota media en el módulo de servidor ha sido: " + mediaServidor + "</p>");
+        document.write("<p style='text-align:center;'>La peor nota media corresponde a alumno: " + peorAlumno + "</p>");
+
+        
+
+    </script>
+
+
+
+</body>
+
+</html>

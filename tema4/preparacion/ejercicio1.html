@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Generador de Quiniela</h2>
+
+    <button onclick="generar()">Generar Quiniela</button>
+    <p id="resultado"></p>
+
+    <script>
+
+        function generar() {
+            
+            let numeros = [];
+
+            while (numeros.length < 6) {
+                let n = Math.floor(Math.random() * 49) + 1;
+                if (!numeros.includes(n)) {
+                    numeros.push(n);
+                }
+            }
+
+            let complementario = Math.floor(Math.random() * 49) + 1;
+            
+            let reintegro = Math.floor(Math.random() * 10);
+
+            let fecha = new Date();
+            
+            let f = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
+
+            document.getElementById("resultado").innerHTML =
+                "Números: " + numeros +
+                "<br>Complementario: " + complementario +
+                "<br>Reintegro: " + reintegro +
+                "<br>Fecha: " + f;
+        }
+
+    </script>
+</body>
+</html>
