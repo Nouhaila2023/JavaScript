@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Ejercicio1 Array</title>
+</head>
+
+    <style>
+        h1{
+            color: rgb(42, 42, 68);
+            text-align:center;
+        }
+
+        </style>
+
+<body>
+
+    <h1>Ejercicio 1 - Gestión de Inventario</h1>
+     <div id="resultado"></div>
+
+
+     <script>
+
+        let Productos = ['Producto', 'Precio', 'Stock', 'Descuento', 'IVA'];
+        let Inventario = [
+            ['Portátil', 899.99, 15, 10, 21],
+            ['Ratón', 25.50, 120, 5, 21],
+            ['Teclado', 75.00, 45, 15, 21],
+            ['Monitor', 249.99, 8, 20, 21],
+            ['Webcam', 89.90, 35, 0, 21]
+        ];
+
+        //Añadir un nuevo producto al inventario: ['USB', 12.99, 200, 8, 21]
+        Inventario.push( ['USB', 12.99, 200, 8, 21]);
+
+
+        //Calcular el precio final de cada producto mediante la aplicación sucesiva del descuento y del IVA sobre el precio base.
+
+        let preciosFinales = [];
+        for (let i = 0; i < Inventario.length; i++) {
+            let precioBase = Inventario[i][1];
+            let descuento = Inventario[i][3];
+            let iva = Inventario[i][4];
+            let precioConDescuento = precioBase - (precioBase * (descuento / 100));
+            let precioFinal = precioConDescuento + (precioConDescuento * (iva / 100));
+            preciosFinales[i] = precioFinal;
+        }
+
+        
+        //Calcular el valor total en stock de cada producto, multiplicando su precio final por la cantidad disponible.
+
+        let valoresStock = [];
+        for (let i = 0; i < Inventario.length; i++) {
+            let precioFinal = preciosFinales[i];
+            let stock = Inventario[i][2];
+            let valorTotal = precioFinal * stock;
+            valoresStock[i] = valorTotal;
+        }
+        
+
+        //Identificar el producto con mayor valor de inventario y mostrar tanto su nombre como el valor total
+
+        let mayorValor = 0;
+        let productoMayorValor = "";
+        for (let i = 0; i < valoresStock.length; i++) {
+            if (valoresStock[i] > mayorValor) {
+                mayorValor = valoresStock[i];
+                productoMayorValor = Inventario[i][0];
+            }
+        }
+
+        
+        
+        //Calcular el precio medio considerando todos los productos originales (sin aplicar descuentos ni IVA).
+        
+        let sumaPrecios = 0;
+        for (let i = 0; i < Inventario.length; i++) {
+            sumaPrecios += Inventario[i][1];
+        }
+        let precioMedio = (sumaPrecios / Inventario.length);
+              
+
+        //Identificar el producto con menor stock entre los cinco productos iniciales (sin contar el nuevo producto añadido).
+        let menorStock = Inventario[0][2];
+        let productoMenorStock = Inventario[0][0];
+        for (let i = 1; i < 5; i++) {
+            if (Inventario[i][2] < menorStock) {
+                menorStock = Inventario[i][2];
+                productoMenorStock = Inventario[i][0];
+            }
+        }   
+               
+        //Tabla de resultado
+
+        let tabla = "<table border='1' cellspacing='0' cellpadding='10' style='margin:auto; text-align:center;'>";
+        tabla += "<tr><th>Producto</th><th>Precio</th><th>Stock</th><th>Descuento</th><th>IVA</th><th>Precio Final</th><th>Valor Stock</th></tr>";
+        for (let i = 0; i < Inventario.length; i++) {
+            tabla += "<tr>";
+            for (let j = 0; j < Inventario[i].length; j++) {
+                tabla += "<td>" + Inventario[i][j] + "</td>";
+            }
+            tabla += "<td>" + preciosFinales[i] + "</td>";
+            tabla += "<td>" + valoresStock[i] + "</td>";
+            tabla += "</tr>";
+        }
+        
+        document.getElementById("resultado").innerHTML = tabla;
+        document.write("<br>");
+        document.write("<p style='text-align:center;'>El producto con mayor valor: " + productoMayorValor + " ----> " + mayorValor + "€</p>");
+        document.write("<p style='text-align:center;'>El precio medio: " + precioMedio + "€</p>");
+        document.write("<p style='text-align:center;'>Menor stock (5 iniciales): " + productoMenorStock + " ----> " + menorStock + "</p>");
+
+        
+
+
+
+
+    </script>
+
+   </div>
+</body>
+
+</html>

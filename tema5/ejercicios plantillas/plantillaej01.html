@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla  Ejercicio 1</title>
+    <script>
+        
+       
+    </script>
+    <style>
+        div#capa{
+            border: 1px solid #666;
+            padding: 10px;
+            margin: 10px 150px; 
+            background-color:beige;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div id="capa">
+        <form name="formulario">
+            <input type="checkbox" id="seleccionar">Seleccionar todos
+            <input type="checkbox" id="deseleccionar">Deseleccionar todos <br>
+            <input type="checkbox" name="item" value="1">Item1 <br>
+            <input type="checkbox" name="item" value="2">Item2 <br>
+            <input type="checkbox" name="item" value="3">Item3 <br>
+            <input type="checkbox" name="item" value="4">Item4 <br>
+            <input type="checkbox" name="item" value="5">Item5 <br>
+            <input type="checkbox" name="item" value="6">Item6 <br>
+            <input type="checkbox" name="item" value="7">Item7 <br>
+        </form>
+    </div>
+
+
+
+    <script>
+       
+        /*Observa la plantilla plantillaej01.html. Se pide realizar un script en Javascript que cuando pulsemos en el check
+        button Seleccionar todos se seleccionen todos los ítems y cuando pulsemos en deseleccionar todos se
+        deseleccionen todos los ítems. Si hubiera algún ítem seleccionado se debe seleccionar o deseleccionar según el
+        botón pulsado*/
+
+
+
+        function marcar(){
+            let seleccionarTodo = document.formulario.item;
+
+            for (let i=0; i<seleccionarTodo.length; i++){
+                document.formulario.item[i].checked = true;
+            }
+            
+
+        }
+        
+        function desmarcar(){
+            let seleccionarTodo = document.formulario.item;
+
+            for (let i=0; i<seleccionarTodo.length; i++){
+                document.formulario.item[i].checked = false;
+            }
+            
+
+        }
+
+        document.getElementById("seleccionar").onclick = marcar;
+        document.getElementById("deseleccionar").onclick = desmarcar;
+        
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plantilla ejercicio2</title>
+    <style>
+        div#capa {
+            border: 2px solid #666;
+            padding: 25px;
+            margin: 10px 100px;
+            background-color: beige;
+            opacity: 0.8;
+            float: left;
+            width: 350px;
+        }
+
+        div#contenedor {
+            margin: 0 auto;
+            width: 900px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="capa">
+            <form name="formulario">
+                <input type="checkbox" id="todos">Seleccionar todos
+                <input type="checkbox" id="ninguno">Deseleccionar todos
+                <br>
+
+            </form>
+        </div>
+        <div id="capa2">
+            <input type="button" value="Enviar>>">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+    <script>
+
+        window.onload = function () {
+            let personas = ['pepe', 'lola', 'juan', 'lucas', 'lorena', 'asunta'];
+            let formulario = document.formulario;
+
+            for (let i = 0; i < personas.length; i++) {
+                let checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.name = "item";
+                checkbox.value = personas[i];
+
+                let label = document.createElement("label");
+                label.appendChild(document.createTextNode(personas[i]));
+
+                formulario.appendChild(checkbox);
+                formulario.appendChild(label);
+                formulario.appendChild(document.createElement("br"));
+            }
+        }
+
+
+        // Seleccionar todos
+        document.getElementById("todos").onclick = 
+        function () {
+            let items = document.getElementsByName("item");
+            for (let i = 0; i < items.length; i++) {
+                items[i].checked = true;
+            }
+            document.getElementById("ninguno").checked = false;
+        };
+
+        // Deseleccionar todos
+        document.getElementById("ninguno").onclick = 
+        function () {
+            let items = document.getElementsByName("item");
+            for (let i = 0; i < items.length; i++) {
+                items[i].checked = false;
+            }
+            document.getElementById("todos").checked = false;
+        };
+
+        // Botón enviar
+        document.querySelector('input[value="Enviar>>"]').onclick = 
+        function () {
+            let resultado = "";
+            let items = document.getElementsByName("item");
+
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].checked) {
+                    resultado += items[i].value + "\n";
+                }
+            }
+
+            document.querySelector("textarea").value = resultado;
+        };
+
+    </script>
+</body>
+
+</html>

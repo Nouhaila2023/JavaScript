@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function mostrarInformacion() {
+        for (let i = 0; i <= document.formulario.actores.length; i++) {
+          if (document.formulario.actores[i].checked)
+            alert(
+              "El nombre del actor es: " + document.formulario.actores[i].value
+            );
+        }
+      }
+    </script>
+    <form action="" name="formulario" id="formulario">
+      <input
+        type="radio"
+        name="actores"
+        id="actor1"
+        value="Antonio Banderas"
+        checked
+      />
+      <label for="antonio">Antonio</label>
+      <input
+        type="radio"
+        name="actores"
+        id="actor2"
+        value="Penelope Cruz"
+      /><label for="antonio">Penelope</label>
+      <input type="radio" name="actores" id="actor3" value="Tom Cruise" /><label
+        for="Tom"
+        >Tom Cruise</label
+      >
+      <input
+        type="button"
+        value="Mostrar Datos"
+        onclick="mostrarInformacion()"
+      />
+    </form>
+  </body>
+</html>

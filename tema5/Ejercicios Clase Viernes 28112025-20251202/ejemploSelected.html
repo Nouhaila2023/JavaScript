@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function muestraInformacion() {
+        let select =
+          document.getElementById(
+            "provincias"
+          ); /*no lo he utilizado , lo he hecho en plan largo*/
+        let texto =
+          document.getElementById("provincias").options[
+            document.getElementById("provincias").selectedIndex
+          ].text;
+        alert(" la propiedad text el de control es: " + texto);
+        let value =
+          document.getElementById("provincias").options[
+            document.getElementById("provincias").selectedIndex
+          ].value;
+        alert(" la propiedad value del control es: " + value);
+      }
+    </script>
+    <form action="" name="formulario" id="formulario">
+      <select name="provincias" id="provincias">
+        <option value="al">Almeria</option>
+        <option value="gr">Granada</option>
+        <option value="ja">Jaen</option>
+      </select>
+      <input
+        type="button"
+        value="Consultar select"
+        onclick="muestraInformacion()"
+      />
+    </form>
+  </body>
+</html>
