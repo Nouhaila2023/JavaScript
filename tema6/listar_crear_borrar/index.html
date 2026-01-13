@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listar_crear_borrar</title>
+</head>
+
+<body>
+
+
+    //Hacer una función para añadir poblaciones a la lista , las poblaciones se pedirán por teclado ,
+    se añadirá al final de la lista.
+    Hacer otra función para eliminar poblaciones, se pedirá por teclado el número del elemento de
+    la lista que se quiere borrar.
+
+
+    <h2>Lista de Poblaciones</h2>
+    <ol id="lista">
+        <li>Vera</li>
+        <li>Cuevas</li>
+        <li>Gaeeocha</li>
+    </ol>
+
+    <input type="button" value="Añadir Población" id="anadir">
+    <input type="button" value="Eliminar Población" id="eliminar">
+
+
+    <script>
+
+        window.onload = function () {
+            document.getElementById("anadir").onclick = añadirPoblacion;
+            document.getElementById("eliminar").onclick = eliminarPoblacion;
+            actualizarNumeros();
+        };
+
+        function inicio() {
+
+
+            const ul = document.getElementById("lista");
+
+            for (let i = 0; i < lista.length; i++) {
+                const li = document.createElement("li");
+                li.textContent = i + 1 + i;
+                ul.appendChild(li);
+            }
+
+        }
+
+
+
+        function añadirPoblacion() {
+
+            const nueva = prompt("Introduce el nombre de la nueva población:");
+            if (nueva) {
+                const ul = document.getElementById("lista");
+                const li = document.createElement("li");
+                li.textContent = nueva;
+                ul.appendChild(li);
+            }
+
+
+        }
+
+
+        function eliminarPoblacion() {
+
+            //const p = document.getElementById("lista");
+            //p.remove();
+
+            const numero = prompt("Introduce el número de la población a eliminar:");
+            const ul = document.getElementById("lista");
+            const li = ul.getElementsByTagName("li");
+            const indice = parseInt(numero) - 1;
+
+            if (!isNaN(indice) && indice >= 0 && indice < li.length) {
+                ul.removeChild(li[indice]);
+                numerarLista();
+            } else {
+                alert("Número incorrecto");
+            }
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
