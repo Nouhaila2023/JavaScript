@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .miClase{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div id="main">
+        <p id="parrafo1">Este es el primer parrafo</p>
+        <p id="parrafo2">Este es el primer parrafo</p>
+        <p id="parrafo3" class="miClase">Este es el primer parrafo</p>
+    </div>
+
+    <br/>
+
+    <button id="cambiarTexto">Cambiar texto de parrafo</button>
+    <button id="cambiarClases">Cambiar clases de parrafo</button>
+    <button id="quitatClases">Quitar clases de todos los parrafos</button>
+
+    <script>
+        window.addEventListener('load', inicio);
+
+        function inicio(){
+            document.getElementById('cambiarTexto').addEventListener('click', cambiarTexto);
+            document.getElementById('cambiarClases').addEventListener('click', cambiarClases);
+            document.getElementById('quitatClases').addEventListener('click', quitatClases);
+        }
+
+
+        function cambiarTexto(){
+            //Seleccionar un unico elemento segun su id
+            document.getElementById('parrafo1').innerHTML = "El texto del primer parrafo ha sido cambiado";
+            //Seleccionar todos los elementos segun su etiqueta 
+            document.getElementsByTagName("p")[1].innerHTML = "Segundo parrafo cambiado";
+            //Seleccionar todos los elemontos segun su clase
+            document.getElementsByClassName("miClase")[0].innerHTML = "Tercer pararafo cambiado";
+
+            //Seleccionar un elemento dentro de otro
+            var principal = document.getElementById("main");
+            var parrafo1 = document.getElementById("parrafo1");
+
+            //Sleecionar el primer elemento con un selector CSS
+            /*document.querySelector("p.miClase");
+            document.querySelectorAll("p.miClase")[0];
+            */
+
+        }
+
+        function cambiarClases(){
+            document.getElementById("parrafo1").setAttribute("class", "miClase");
+            document.getElementById("parrafo2").className = "miClase";
+            
+        }
+
+        function quitatClases(){
+             for(var i = 0; i < document.getElementsByTagName("p").length; i++){
+                document.getElementsByTagName("p")[i].className="";
+            }
+            
+        }
+
+        /*window.addEventListener('load', function(){
+            let botonTexto = document.getElementById('cambiarTExto');
+            let botonClases = document.getElementById('cambiarClases');
+            let botonQuitar = document.getElementById('quitatClases');
+
+            botonTexto.addEventListener('click', function(){
+                let parrafo1 = document.getElementById('parrafo1');
+                parrafo1.textContent = "El texto del primer parrafo ha sido cambiado";
+            });
+
+            botonClases.addEventListener('click', function(){
+                let parrafo2 = document.getElementById('parrafo2');
+                parrafo2.classList.add('resaltado');
+                let parrafo3 = document.getElementById('parrafo3');
+                parrafo3.classList.add('importante');
+            });
+
+            botonQuitar.addEventListener('click', function(){
+                let parrafos = document.querySelectorAll('#main p');
+                parrafos.forEach(function(parrafo){
+                    parrafo.className = '';
+                });
+            });
+        });*/
+    </script>
+
+</body>
+</html>
