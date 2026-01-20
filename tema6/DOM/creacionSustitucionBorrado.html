@@ -24,7 +24,7 @@
     <button id="sustituirPrimerovacio">Sustituir primer párrafo por vacío</button>
 
     <script>
-        window.addEventListener("load", inicion);
+        window.addEventListener("load", inicio);
 
         function inicio(){
             document.getElementById("crearParrafo").addEventListener("click", crearParrafo);
@@ -35,27 +35,47 @@
         }
 
         function crearParrafo(){
-            //Crear elemento
             var parrafo = document.createElement("p");
-            //Crear texto
-            var texo = documento.createTextNode(document.getElementsByName("texto").value);
+            var texto = document.createTextNode(document.getElementById("texto").value);
             parrafo.appendChild(texto);
 
-            //Añadir atributos
             parrafo.setAttribute("class", "miClase");
 
-            //Parafo.className = "miClase";
             var cont = document.getElementById("div1");
             cont.appendChild(parrafo);
-
         }
 
-        function crearImagen(){}
-        function borrarUltimo(){}
-        function borrarPrimero(){}
-        function sustituirPrimeroVacio(){}
+        function crearImagen(){
+            var imagen = document.createElement("img");
 
+            var ruta = prompt("Introduce la ruta");
+            imagen.setAttribute("src", ruta);
+            imagen.setAttribute("alt", prompt("Introduce el texto alternativo"));
 
+            var cont = document.getElementById("div1");
+            cont.appendChild(imagen);
+        }
+
+        function borrarUltimo(){
+            var cont = document.getElementById("div1");
+            var hijo = cont.lastChild;
+            cont.removeChild(hijo);
+        }
+
+        function borrarPrimero(){
+            var cont = document.getElementById("div1");
+            var hijo = cont.firstChild;
+            cont.removeChild(hijo);
+        }
+
+        function sustituirPrimeroVacio(){
+            var cont = document.getElementById("div1");
+            var parrafo = document.createElement("p");
+            var texto = document.createTextNode("vacio");
+            parrafo.appendChild(texto);
+
+            cont.replaceChild(parrafo, cont.firstChild);
+        }
     </script>
 
 </body>

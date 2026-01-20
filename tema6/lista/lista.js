@@ -7,15 +7,10 @@ function inicio() {
         let texto = document.createTextNode("Elemento " + (i + 1));
         li.appendChild(texto);
         document.getElementById("lista").appendChild(li);
-
     }
- 
-    document.getElementById("agregar")
-        .addEventListener("click", agregarElemento );
 
     document.getElementById("agregar")
-        .addEventListener("click", eliminarElemento );
-
+        .addEventListener("click", agregarElemento);
 }
 
 function agregarElemento() {
