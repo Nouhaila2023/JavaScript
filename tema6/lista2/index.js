@@ -1,13 +1,13 @@
 window.onload = iniciar;
 
 function iniciar() {
-    // Botón para agregar nuevo li
-    document.getElementById("agregar").addEventListener("click", agregarElemento);
+    // Botón para agregar texto
+    document.getElementById("anadirTexo").addEventListener("click", agregarElemento);
     
-    // Botón para borrar primer li
+    // Botón para borrar primer elemento
     document.getElementById("botonPremiro").addEventListener("click", borrarPrimero);
     
-    // Botón para borrar último li
+    // Botón para borrar último elemento
     document.getElementById("botonUltimo").addEventListener("click", borrarUltimo);
 }
 

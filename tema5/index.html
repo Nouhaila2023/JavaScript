@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen UD5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1>Validacion de un Formulario</h1>
+    <form action="">
+        <table>
+            <tr>
+                <td> <label for="nombre">Nombre Completo: </label></td>
+                <td> <input type="text" name="nombre" id="nombre"></td>
+            </tr>
+            <tr>
+                <td> <label for="fecha">Fecha de nacimiento: </label></td>
+                <td> <input type="text" name="fecha" id="fecha" placeholder="dd/mm/aaaa"></td>
+            </tr>
+            <tr>
+                <td> <label for="telefono">Telefono</label></td>
+                <td> <input type="text" name="telefono" id="telefono"></td>
+            </tr>
+            <tr>
+                <td> <label for="iban">Cuenta bancaria (IBAN) </label></td>
+                <td> <input type="text" name="iban" id="iban"></td>
+            </tr>
+            <tr>
+                <td> <label for="contrasenia">Contraseña</label></td>
+                <td> <input type="text" name="contrasenia" id="contrasenia"></td>
+            </tr>
+            <tr>
+                <td> <label for="confirmar">Confirmación de contraseña</label></td>
+                <td> <input type="text" name="confirmar" id="confirmar"></td>
+            </tr>
+            <tr id="col">
+                <td colspan="2">
+                    <input type="button" value="Enviar" id="validar" class="boton">
+                    <input type="reset" value="Limpiar" class="boton">
+                </td>
+
+        </table>
+        <br>
+
+    </form>
+    <div id="intentos" class="intentos"></div>
+
+</body>
+
+</html>
