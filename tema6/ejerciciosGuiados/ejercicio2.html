@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="lista">
+    </ul>
+
+
+    <script>
+
+        /*
+        1. Accede a la lista <ul>.
+        2. Usa un bucle for para crear 5 elementos <li>.
+        3. El texto de cada elemento debe ser:
+        "Elemento 1", "Elemento 2", etc.
+        4. Añade cada <li> a la lista
+        */
+
+        var lista = document.getElementById("lista");
+
+        for (var i = 0; i < 5; i++) {
+            var li = document.createElement("li");
+            li.textContent = "Elemento " + (i + 1);
+            lista.appendChild(li);
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
