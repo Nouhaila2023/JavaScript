@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .destacado {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="titulo" class="destacado">Título original</h1>
+
+
+    <script>
+        const titulo = document.querySelector("h1");
+
+        // Guardamos el texto original
+        const tituloOriginal = titulo.textContent;
+
+        // Mostrar el título original (ya está visible)
+
+        // Cambiar el texto después de 2 segundos
+        setTimeout(() => {
+            titulo.textContent = "Título modificado desde JavaScript";
+            titulo.classList.add("destacado");
+        }, 2000);
+
+    </script>
+
+    
+</body>
+
+</html>

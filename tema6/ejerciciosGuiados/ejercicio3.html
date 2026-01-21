@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .destacado {
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="titulo" class="destacado">Título original</h1>
+
+    <script>
+
+        // 1. Selecciona el encabezado <h1>
+        const titulo = document.querySelector("h1");
+
+        // 2. Cambia su texto
+        titulo.textContent = "Título modificado desde JavaScript";
+
+        // 3. Añade la clase 'destacado'
+        titulo.classList.add("destacado");
+
+
+
+    </script>
+
+</body>
+
+</html>

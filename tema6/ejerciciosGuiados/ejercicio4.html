@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="caja"></div>
+
+
+
+    <script>
+        // 1. Seleccionar el div
+        const caja = document.querySelector("#caja");
+
+        // 2. Crear el elemento <img>
+        const imagen = document.createElement("img");
+
+        // 3. Asignar una imagen (ficticia)
+        imagen.src = "https://via.placeholder.com/150";
+
+        // 4. Añadir texto alternativo
+        imagen.alt = "Imagen de ejemplo";
+
+        // 5. Insertar la imagen dentro del div
+        caja.appendChild(imagen);
+
+    </script>
+
+</body>
+
+</html>
