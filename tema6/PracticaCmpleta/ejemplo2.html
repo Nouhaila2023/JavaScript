@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo DOM</title>
+</head>
+<body>
+
+    <!-- Comentario del DOM -->
+    <h1 id="titulo">Hola <strong>mundo</strong></h1>
+
+    <p class="texto">Este es un párrafo</p>
+
+    <button id="btn">Haz clic</button>
+
+    <script>
+        // 1. Acceso al documento
+        console.log(document);
+
+        // 2. Acceso a un elemento
+        let titulo = document.getElementById("titulo");
+
+        // 3. Propiedades del nodo
+        console.log(titulo.nodeType);   // 1 → Element
+        console.log(titulo.nodeName);   // H1
+        console.log(titulo.nodeValue);  // null
+
+        // 4. Acceso a nodos hijos
+        console.log(titulo.childNodes);
+        // Texto: "Hola "
+        // Elemento: <strong>
+
+        // 5. Acceso al texto
+        console.log(titulo.firstChild.nodeValue); // Hola 
+
+        // 6. Acceso a atributos
+        console.log(titulo.getAttribute("id"));
+
+        // 7. Modificar contenido
+        titulo.style.color = "blue";
+
+        // 8. Crear un nuevo elemento
+        let nuevoParrafo = document.createElement("p");
+        nuevoParrafo.textContent = "Párrafo creado desde JavaScript";
+
+        document.body.appendChild(nuevoParrafo);
+
+        // 9. Evento
+        document.getElementById("btn").addEventListener("click", function () {
+            alert("¡Has hecho clic!");
+        });
+    </script>
+
+</body>
+</html>

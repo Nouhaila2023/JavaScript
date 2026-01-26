@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="titulo">Hola <strong>mundo</strong></h1>
+    <p class="texto">Este es un párrafo.</p>
+    <button id="btn">Haz clic aquí</button>
+
+    <script>
+
+        // Selección por ID
+        const titulo = document.getElementById('titulo');
+        console.log(titulo);
+
+        // Selección por clase
+        const parrafos = document.getElementsByClassName('texto');
+        console.log(parrafos);
+
+        // Selección por etiqueta
+        const botones = document.getElementsByTagName('button');
+        console.log(botones);
+
+        // Selección con querySelector
+        const primerParrafo = document.querySelector('.texto');
+        console.log(primerParrafo);
+
+        // Selección con querySelectorAll
+        const todosLosParrafos = document.querySelectorAll('.texto');
+        console.log(todosLosParrafos);
+
+        // Añadir un evento al botón
+        const boton = document.getElementById('btn');
+        boton.addEventListener('click', function() {
+            alert('¡Botón clickeado!');
+        });
+
+
+    </script>
+    
+</body>
+</html>
