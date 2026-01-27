@@ -12,14 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Agregar Elemento
 function addText() {
-  //crear nuevo elemento
   const nuevoElemento = document.createElement("li");
-  //Pedir texto al usuario
   nuevoElemento.textContent = prompt("Escribe un texto");
-  //Agregar el li a la lista
   document.querySelector("#miLista").appendChild(nuevoElemento);
-
-  //Permitir eliminar el elemento al hacer clic
   nuevoElemento.addEventListener("click", function () {
     nuevoElemento.remove();
   });
