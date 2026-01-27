@@ -8,17 +8,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const td = document.createElement("td");
 
       if ((i + j) % 2 == 0) {
-        td.classList.add("blanco");
+        td.classList.add("white");
       } else {
-        td.classList.add("negro");
+        td.classList.add("black");
       }
 
       let pieza = "";
 
       if (i === 1) {
-        pieza = "peonN";
+        pieza = "peonB";
       } else if (i === 6) {
-        pieza = "torreN";
+        pieza = "peonN";
       } else if (i === 0) {
         const piezasFila0 = [
           "torreB",
