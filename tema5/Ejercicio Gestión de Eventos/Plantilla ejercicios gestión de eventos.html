@@ -144,29 +144,21 @@
 		}
 
 		function edad() {
-			const edad = document.getElementById("edad");
+			const edad = document.getElementById('edad');
+			const error = document.getElementById('errores');
+
 			edad.className = "";
 
-			const valor = edad.value.trim();
-
-			if (!/^\d+$/.test(valor)) {
+			if (edad.value == "" || edad.value < 18 || isNaN(edad.value)) {
 				edad.focus();
 				edad.className = "error";
-				alert("La edad debe contener solo números");
+				error.innerHTML = ("La edad no es correcta");
 				return false;
+			} else {
+				edad.className = "";
+				return true;
 			}
 
-			const numero = parseInt(valor);
-
-			if (numero < 0 || numero > 105) {
-				edad.focus();
-				edad.className = "error";
-				alert("La edad debe estar entre 0 y 105");
-				return false;
-			}
-
-			edad.className="";
-			return true;
 		}
 
 		function validarNif() {
@@ -184,19 +176,144 @@
 			}
 		}
 
-		function validarEmail(){
-			const email = document.getElementById("email");
+		function validarEmail() {
+			const email = document.getElementById('email');
+			const error = document.getElementById('errores');
+			const patron = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,}$/;
+
+			email.className = "";
+
+			if (patron.test(email.value)) {
+				return true;
+			} else {
+				email.focus();
+				email.className = "error";
+				error.innerHTML = ("Email incorrecto");
+				return false;
+			}
 
 		}
 
+
+		function validarProvincia() {
+			const provincia = document.getElementById("provincia");
+			const error = document.getElementById("errores");
+
+			if (provincia.selectedIndex == 0) {
+				provincia.focus();
+				error.innerHTML = "Debes seleccionar una provincia";
+				return false;
+			}
+			return true;
+		}
+
+
+
+		function validarFecha() {
+			const fecha = document.getElementById("fecha");
+			const error = document.getElementById("errores");
+
+			// dd/mm/aaaa o dd-mm-aaaa
+			const patron = /^\d{2}[\/-]\d{2}[\/-]\d{4}$/;
+
+			if (!patron.test(fecha.value)) {
+				fecha.focus();
+				error.innerHTML = "Formato de fecha incorrecto";
+				return false;
+			}
+			return true;
+		}
+
+
+
+		function validarTelefono() {
+			const telefono = document.getElementById("telefono");
+			const error = document.getElementById("errores");
+
+			const patron = /^\d{9}$/;
+
+			if (!patron.test(telefono.value)) {
+				telefono.focus();
+				error.innerHTML = "El teléfono debe tener 9 dígitos";
+				return false;
+			}
+			return true;
+		}
+
+
+		function validarHora() {
+			const hora = document.getElementById("hora");
+			const error = document.getElementById("errores");
+
+			const patron = /^\d{2}:\d{2}$/;
+
+			if (!patron.test(hora.value)) {
+				hora.focus();
+				error.innerHTML = "Formato de hora incorrecto";
+				return false;
+			}
+			return true;
+		}
+
+		function contarIntentos() {
+			let contador = 0;
+
+			if (document.cookie == "") {
+				document.cookie = "intentos=0";
+			}
+
+			contador = document.cookie.substring(9);
+			contador++;
+
+			document.cookie = "intentos=" + contador;
+			document.getElementById("intentos").innerHTML =
+				"Intento de Envíos del formulario: " + contador;
+		}
+
+
+
+
 		function validarTodo(e) {
-			if (comprobarNombre() && comprobarApellido() && edad() && validarNif()) {
+
+			contarIntentos();
+
+			if (
+				comprobarNombre() &&
+				comprobarApellido() &&
+				edad() &&
+				validarNif() &&
+				validarEmail() &&
+				validarProvincia() &&
+				validarFecha() &&
+				validarTelefono() &&
+				validarHora()
+			) {
+				if (!confirm("¿Desea enviar el formulario?")) {
+					e.preventDefault();
+					return false;
+				}
 				return true;
 			} else {
 				e.preventDefault();
 				return false;
 			}
 		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	</script>
 
