@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto puzzle deslizante</title>
+	<script src="script.js"></script>
+    <style type="text/css">
+        div#tablero, div#solucion {
+			border: 5px solid black;
+			padding: 0px;
+			margin-left: 10%;
+			background-color: beige;
+			opacity: 0.8;
+			position: relative;
+			width: 400px;
+			float: left;
+		}
+		
+		div#solucion {
+			background: url('solucion.png');
+			min-height: 400px;
+			
+		}
+		
+		
+		.clearfix {
+			overflow: hidden;
+		}
+		
+		
+		div.celda {
+			border: 0px solid #000;
+			width: 100px;
+			height: 100px;
+			float: left;
+			color: red;
+			text-align: center;
+			font-size: 1.5em;
+			margin: 0;
+			padding: 0;
+		}
+		
+		h1{
+			margin: 10px auto;
+			text-align: center;
+		}
+    </style>
+    <script type="text/javascript">
+        
+    </script>
+</head>
+<body>
+   <h1>Puzzle Deslizante</h1>
+
+	<div id="tablero" class="clearfix"></div>
+
+	<div id="solucion" class="clearfix">
+		<img id="solucion" alt="Imagen de solución" src="img/solucion.png" />
+	</div>
+    
+    
+</body>
+</html>
